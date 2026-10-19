@@ -1,0 +1,37 @@
+# Dependências
+node_modules/
+
+# Build
+dist/
+dist-ssr/
+*.local
+
+# Testes
+coverage/
+playwright-report/
+test-results/
+blob-report/
+playwright/.cache/
+
+# Ambiente
+.env
+.env.*
+!.env.example
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+pnpm-debug.log*
+
+# Editor e sistema
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.DS_Store
+Thumbs.db
+*.suo
+*.sw?
+
+# Claude Code: configurações locais
+.claude/settings.local.json

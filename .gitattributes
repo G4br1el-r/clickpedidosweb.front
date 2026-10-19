@@ -1,0 +1,5 @@
+# O Biome formata com LF e o hook do Husky precisa de LF; sem isto o autocrlf do Windows converte para CRLF.
+* text=auto eol=lf
+*.jpg binary
+*.png binary
+*.webp binary
