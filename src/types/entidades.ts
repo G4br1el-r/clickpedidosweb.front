@@ -166,6 +166,8 @@ export interface ConfiguracaoLoja {
   cortarPapelImpressora: boolean
   mercadoPagoAccessToken: string | null
   mercadoPagoPublicKey: string | null
+  mercadoPagoClientId: string | null
+  mercadoPagoClientSecret: string | null
 }
 
 /** 0 = domingo, como o DayOfWeek do .NET. */

@@ -28,6 +28,8 @@ export const lojaInicial: ConfiguracaoLoja = {
   cortarPapelImpressora: true,
   mercadoPagoAccessToken: null,
   mercadoPagoPublicKey: null,
+  mercadoPagoClientId: null,
+  mercadoPagoClientSecret: null,
 }
 
 export const horariosIniciais: HorarioFuncionamento[] = ([0, 1, 2, 3, 4, 5, 6] as DiaSemana[]).map(
