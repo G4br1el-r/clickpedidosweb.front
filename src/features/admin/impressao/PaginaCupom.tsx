@@ -1,5 +1,6 @@
 import { useEffect, useMemo } from "react"
 import { useParams, useSearchParams } from "react-router"
+import { RotaProtegida } from "@/features/admin/conta/RotaProtegida"
 import { useSessao } from "@/features/admin/conta/useSessao"
 import { formatarDataHora } from "@/lib/datas"
 import { formatarMoeda } from "@/lib/moeda"
@@ -14,6 +15,14 @@ import "./cupom.css"
  * Com ?embutido=1 (iframe da fila) ou ?auto=1, abre o diálogo de impressão sozinho.
  */
 export function PaginaCupom() {
+  return (
+    <RotaProtegida>
+      <Cupom />
+    </RotaProtegida>
+  )
+}
+
+function Cupom() {
   const id = Number(useParams()["id"])
   const [parametros] = useSearchParams()
   const sessao = useSessao()
