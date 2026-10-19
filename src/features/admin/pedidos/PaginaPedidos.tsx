@@ -1,31 +1,16 @@
 import { useQuery } from "@tanstack/react-query"
-import {
-  type ColumnDef,
-  flexRender,
-  getCoreRowModel,
-  getSortedRowModel,
-  type SortingState,
-  useReactTable,
-} from "@tanstack/react-table"
-import { ArrowDownIcon, ArrowUpIcon, ClipboardListIcon } from "lucide-react"
-import { useMemo, useState } from "react"
+import type { ColumnDef } from "@tanstack/react-table"
+import { ClipboardListIcon } from "lucide-react"
+import { useMemo } from "react"
 import { useNavigate, useSearchParams } from "react-router"
 import { BadgeStatus } from "@/components/ui/badge-status"
 import { Empty, EmptyDescription, EmptyHeader, EmptyMedia, EmptyTitle } from "@/components/ui/empty"
 import { Input } from "@/components/ui/input"
 import { Skeleton } from "@/components/ui/skeleton"
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-} from "@/components/ui/table"
+import { TabelaDados } from "@/components/ui/tabela-dados"
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group"
 import { diaLocal, formatarHora } from "@/lib/datas"
 import { formatarMoeda } from "@/lib/moeda"
-import { cn } from "@/lib/utils"
 import { listarPedidos } from "@/mock/pedidos/admin"
 import { rotuloPagamento, rotuloStatus, rotuloTipo } from "@/mock/regras/rotulos"
 import { type Pedido, STATUS_PEDIDO, type StatusPedido } from "@/types/entidades"
@@ -86,11 +71,10 @@ const colunas: ColumnDef<Pedido>[] = [
   },
   {
     accessorKey: "total",
-    header: () => <span className="block text-right">Total</span>,
+    header: "Total",
+    meta: { direita: true },
     cell: ({ row }) => (
-      <span className="numeros block text-right font-semibold">
-        {formatarMoeda(row.original.total)}
-      </span>
+      <span className="numeros font-semibold">{formatarMoeda(row.original.total)}</span>
     ),
   },
 ]
@@ -100,7 +84,6 @@ export function PaginaPedidos() {
   const navegar = useNavigate()
   const data = parametros.get("data") ?? diaLocal(new Date())
   const status = (parametros.get("status") as StatusPedido | null) ?? undefined
-  const [ordem, setOrdem] = useState<SortingState>([{ id: "criadoEm", desc: true }])
 
   const consulta = useQuery({
     queryKey: ["pedidos", data, status],
@@ -110,15 +93,6 @@ export function PaginaPedidos() {
   const total = pedidos
     .filter((p) => p.status !== "Cancelado" && p.status !== "AguardandoPagamento")
     .reduce((s, p) => s + p.total, 0)
-
-  const tabela = useReactTable({
-    data: pedidos,
-    columns: colunas,
-    state: { sorting: ordem },
-    onSortingChange: setOrdem,
-    getCoreRowModel: getCoreRowModel(),
-    getSortedRowModel: getSortedRowModel(),
-  })
 
   function filtrar(chave: "data" | "status", valor: string | null) {
     const novo = new URLSearchParams(parametros)
@@ -186,65 +160,14 @@ export function PaginaPedidos() {
             </EmptyHeader>
           </Empty>
         ) : (
-          <Table>
-            <TableHeader>
-              {tabela.getHeaderGroups().map((grupo) => (
-                <TableRow key={grupo.id}>
-                  {grupo.headers.map((h) => {
-                    const sentido = h.column.getIsSorted()
-                    return (
-                      <TableHead
-                        key={h.id}
-                        aria-sort={
-                          sentido === "asc"
-                            ? "ascending"
-                            : sentido === "desc"
-                              ? "descending"
-                              : undefined
-                        }
-                      >
-                        <button
-                          type="button"
-                          onClick={h.column.getToggleSortingHandler()}
-                          className={cn(
-                            "inline-flex w-full items-center gap-1 font-semibold",
-                            h.column.id === "total" && "justify-end",
-                          )}
-                        >
-                          {flexRender(h.column.columnDef.header, h.getContext())}
-                          {sentido === "asc" && <ArrowUpIcon aria-hidden className="size-3.5" />}
-                          {sentido === "desc" && <ArrowDownIcon aria-hidden className="size-3.5" />}
-                        </button>
-                      </TableHead>
-                    )
-                  })}
-                </TableRow>
-              ))}
-            </TableHeader>
-            <TableBody>
-              {tabela.getRowModel().rows.map((linha) => (
-                <TableRow
-                  key={linha.id}
-                  className="cursor-pointer"
-                  tabIndex={0}
-                  aria-label={`Abrir pedido #${linha.original.id}`}
-                  onClick={() => navegar(`/admin/pedidos/${linha.original.id}`)}
-                  onKeyDown={(e) => {
-                    if (e.key === "Enter" || e.key === " ") {
-                      e.preventDefault()
-                      navegar(`/admin/pedidos/${linha.original.id}`)
-                    }
-                  }}
-                >
-                  {linha.getVisibleCells().map((c) => (
-                    <TableCell key={c.id}>
-                      {flexRender(c.column.columnDef.cell, c.getContext())}
-                    </TableCell>
-                  ))}
-                </TableRow>
-              ))}
-            </TableBody>
-          </Table>
+          <TabelaDados
+            dados={pedidos}
+            colunas={colunas}
+            ordemInicial={[{ id: "criadoEm", desc: true }]}
+            idLinha={(p) => String(p.id)}
+            rotuloLinha={(p) => `Abrir pedido #${p.id}`}
+            aoAbrir={(p) => navegar(`/admin/pedidos/${p.id}`)}
+          />
         )}
       </div>
     </div>

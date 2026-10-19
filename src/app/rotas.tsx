@@ -102,19 +102,50 @@ function rotasAdmin(): RouteObject[] {
         Component: (await import("@/features/admin/conta/PaginaSenha")).PaginaSenha,
       }),
     },
-    ...[
-      "produtos",
-      "produtos/novo",
-      "produtos/:id",
-      "categorias",
-      "bairros",
-      "motoboys",
-      "configuracoes",
-      "mesas",
-      "mesas/:id",
-      "garcom",
-      "cozinha",
-    ].map((path) => ({ path, lazy: emConstrucao })),
+    {
+      path: "produtos",
+      lazy: async () => ({
+        Component: (await import("@/features/admin/produtos/PaginaProdutos")).PaginaProdutos,
+      }),
+    },
+    {
+      path: "produtos/novo",
+      lazy: async () => ({
+        Component: (await import("@/features/admin/produtos/PaginaProdutoForm")).PaginaProdutoForm,
+      }),
+    },
+    {
+      path: "produtos/:id",
+      lazy: async () => ({
+        Component: (await import("@/features/admin/produtos/PaginaProdutoForm")).PaginaProdutoForm,
+      }),
+    },
+    {
+      path: "categorias",
+      lazy: async () => ({
+        Component: (await import("@/features/admin/categorias/PaginaCategorias")).PaginaCategorias,
+      }),
+    },
+    {
+      path: "bairros",
+      lazy: async () => ({
+        Component: (await import("@/features/admin/bairros/PaginaBairros")).PaginaBairros,
+      }),
+    },
+    {
+      path: "motoboys",
+      lazy: async () => ({
+        Component: (await import("@/features/admin/motoboys/PaginaMotoboys")).PaginaMotoboys,
+      }),
+    },
+    {
+      path: "configuracoes",
+      lazy: async () => ({
+        Component: (await import("@/features/admin/configuracoes/PaginaConfiguracoes"))
+          .PaginaConfiguracoes,
+      }),
+    },
+    ...["mesas", "mesas/:id", "garcom", "cozinha"].map((path) => ({ path, lazy: emConstrucao })),
   ]
 }
 

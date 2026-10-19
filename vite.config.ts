@@ -35,10 +35,10 @@ export default defineConfig({
       exclude: ["src/**/*.test.{ts,tsx}", "src/main.tsx", "src/**/*.d.ts"],
       // Valor medido no setup, arredondado para baixo. A meta só sobe.
       thresholds: {
-        statements: 84,
+        statements: 85,
         branches: 80,
         functions: 81,
-        lines: 86,
+        lines: 87,
       },
     },
   },

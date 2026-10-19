@@ -60,3 +60,24 @@ test("cupom de 80 mm abre com os dados do pedido", async ({ page }) => {
   await expect(page.getByRole("heading", { name: "PEDIDO #1" })).toBeVisible()
   await expect(page.getByText("ENTREGA", { exact: true })).toBeVisible()
 })
+
+test("produto esgotado e Pix desligado no admin aparecem assim na loja", async ({ page }) => {
+  await entrar(page, "/admin/produtos")
+  const lanches = page.getByRole("region", { name: /Lanches/ })
+  await lanches.getByRole("switch", { name: "X-Burger disponível para pedir" }).click()
+  await expect(lanches.getByText("Esgotado")).toHaveCount(1)
+
+  await page.goto("/admin/configuracoes")
+  await page.getByRole("switch", { name: "Pix" }).click()
+  await page.getByRole("button", { name: "Salvar configurações" }).click()
+  await expect(page.getByText("Configurações e horários de funcionamento salvos")).toBeVisible()
+
+  await page.goto("/")
+  await expect(page.getByRole("button", { name: /^X-Burger/ })).toBeDisabled()
+  await page.getByRole("button", { name: /^X-Salada/ }).click()
+  await page.getByRole("button", { name: /^Adicionar ·/ }).click()
+  await page.getByRole("button", { name: /Ver sacola/ }).click()
+  await page.getByRole("button", { name: "Continuar" }).click()
+  await expect(page.getByRole("radio", { name: /^Dinheiro/ })).toBeVisible()
+  await expect(page.getByRole("radio", { name: /^Pix/ })).toHaveCount(0)
+})
