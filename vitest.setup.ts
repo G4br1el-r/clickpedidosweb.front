@@ -1,8 +1,11 @@
 import "@testing-library/jest-dom/vitest"
-import { cleanup } from "@testing-library/react"
+import { cleanup, configure } from "@testing-library/react"
 import { afterEach, beforeEach } from "vitest"
 import { banco } from "@/mock/banco"
 import { configurarLatencia } from "@/mock/banco/latencia"
+
+// Telas e painéis carregados sob demanda podem levar mais de 1 s com a suíte inteira rodando.
+configure({ asyncUtilTimeout: 4000 })
 
 // APIs do navegador que o jsdom não implementa e os componentes do Radix usam.
 if (typeof globalThis.ResizeObserver === "undefined") {

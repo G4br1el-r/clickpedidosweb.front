@@ -1,8 +1,8 @@
-import { cn } from "cn"
 import { MinusIcon, PlusIcon } from "lucide-react"
 import { AnimatePresence, m } from "motion/react"
 import { Button } from "@/components/ui/button"
 import { transicao } from "@/lib/motion"
+import { cn } from "@/lib/utils"
 
 interface SeletorQuantidadeProps {
   valor: number

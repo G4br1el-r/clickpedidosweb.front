@@ -1,7 +1,7 @@
-import { cn } from "cn"
 import { MessageSquareTextIcon } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { minutosDesde, tempoDecorrido } from "@/lib/datas"
+import { cn } from "@/lib/utils"
 import { rotuloAcao, rotuloStatus } from "@/mock/regras/rotulos"
 import type { Pedido } from "@/types/entidades"
 import { iconeTipo, origemDoPedido } from "../pedidos/rotulos-ui"

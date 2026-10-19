@@ -1,4 +1,4 @@
-import { cn } from "cn"
+import { cn } from "@/lib/utils"
 import type { Produto } from "@/types/entidades"
 
 const tamanhos = {

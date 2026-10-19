@@ -5,6 +5,9 @@ const url = "http://localhost:5173"
 export default defineConfig({
   testDir: "./e2e",
   fullyParallel: true,
+  // O servidor de dev compila cada tela na primeira visita: folga para o primeiro carregamento.
+  timeout: 45_000,
+  expect: { timeout: 10_000 },
   forbidOnly: !!process.env["CI"],
   retries: process.env["CI"] ? 2 : 0,
   reporter: [["list"], ["html", { open: "never" }]],

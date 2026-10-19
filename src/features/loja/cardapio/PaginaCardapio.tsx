@@ -1,17 +1,38 @@
-import { useState } from "react"
-import { toast } from "sonner"
+import { lazy, Suspense, useEffect, useState } from "react"
 import { Skeleton } from "@/components/ui/skeleton"
-import { ModalProduto } from "@/features/loja/produto/ModalProduto"
 import { BarraSacola } from "@/features/loja/sacola/BarraSacola"
-import { PainelSacola } from "@/features/loja/sacola/PainelSacola"
 import { useSacola } from "@/features/loja/sacola/sacola"
 import { useLinhasSacola } from "@/features/loja/sacola/useLinhasSacola"
+import { avisar } from "@/lib/avisos"
 import type { Produto } from "@/types/entidades"
 import { AbasCategorias, idCategoria } from "./AbasCategorias"
 import { CabecalhoLoja } from "./CabecalhoLoja"
 import { ProdutoLinha } from "./ProdutoLinha"
 import { RodapeLoja } from "./RodapeLoja"
 import { useCardapio } from "./useCardapio"
+
+// Modal e sacola (gaveta, foco, trava de rolagem) só baixam quando o navegador fica ocioso
+// ou no primeiro toque: o cardápio aparece antes.
+const carregarModal = () => import("@/features/loja/produto/ModalProduto")
+const carregarSacola = () => import("@/features/loja/sacola/PainelSacola")
+const ModalProduto = lazy(() => carregarModal().then((m) => ({ default: m.ModalProduto })))
+const PainelSacola = lazy(() => carregarSacola().then((m) => ({ default: m.PainelSacola })))
+
+function usePreCarregar(ativo: boolean) {
+  useEffect(() => {
+    if (!ativo) return
+    const carregar = () => {
+      void carregarModal()
+      void carregarSacola()
+    }
+    if ("requestIdleCallback" in window) {
+      const id = window.requestIdleCallback(carregar, { timeout: 2500 })
+      return () => window.cancelIdleCallback(id)
+    }
+    const id = setTimeout(carregar, 1200)
+    return () => clearTimeout(id)
+  }, [ativo])
+}
 
 interface PaginaCardapioProps {
   /** Cardápio digital (QR Code, TV): só consulta, sem sacola. */
@@ -23,6 +44,7 @@ export function PaginaCardapio({ somenteConsulta = false }: PaginaCardapioProps)
   const [aberto, setAberto] = useState<Produto | null>(null)
   const [sacolaAberta, setSacolaAberta] = useState(false)
   const { resumo } = useLinhasSacola()
+  usePreCarregar(!somenteConsulta)
 
   if (isError)
     return (
@@ -77,24 +99,32 @@ export function PaginaCardapio({ somenteConsulta = false }: PaginaCardapioProps)
 
       {!somenteConsulta && (
         <>
-          <ModalProduto
-            produto={aberto}
-            aberto={aberto !== null}
-            aoFechar={() => setAberto(null)}
-            aoAdicionar={(item) => {
-              useSacola.getState().adicionar(item)
-              setAberto(null)
-              toast.success("Adicionado à sacola", {
-                action: { label: "Abrir sacola", onClick: () => setSacolaAberta(true) },
-              })
-            }}
-          />
+          {aberto && (
+            <Suspense fallback={null}>
+              <ModalProduto
+                produto={aberto}
+                aberto
+                aoFechar={() => setAberto(null)}
+                aoAdicionar={(item) => {
+                  useSacola.getState().adicionar(item)
+                  setAberto(null)
+                  avisar.sucesso("Adicionado à sacola", {
+                    action: { label: "Abrir sacola", onClick: () => setSacolaAberta(true) },
+                  })
+                }}
+              />
+            </Suspense>
+          )}
           <BarraSacola
             quantidade={resumo.quantidade}
             subtotal={resumo.subtotal}
             aoAbrir={() => setSacolaAberta(true)}
           />
-          <PainelSacola aberto={sacolaAberta} aoMudar={setSacolaAberta} />
+          {sacolaAberta && (
+            <Suspense fallback={null}>
+              <PainelSacola aberto={sacolaAberta} aoMudar={setSacolaAberta} />
+            </Suspense>
+          )}
         </>
       )}
     </>

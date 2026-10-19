@@ -1,13 +1,10 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
-import { LazyMotion, MotionConfig } from "motion/react"
-import { type ReactNode, useEffect, useState } from "react"
-import { Toaster } from "@/components/ui/sonner"
-import { TooltipProvider } from "@/components/ui/tooltip"
+import { lazy, type ReactNode, Suspense, useEffect, useState } from "react"
 import { banco } from "@/mock/banco"
 import { ProvedorTema } from "./tema/ProvedorTema"
 
-// As features de animação (inclusive layout) só baixam depois da primeira pintura.
-const carregarRecursosMotion = () => import("./motion-recursos").then((m) => m.default)
+// O Toaster (sonner) baixa logo depois da primeira pintura; os avisos usam src/lib/avisos.ts.
+const Toaster = lazy(() => import("@/components/ui/sonner").then((m) => ({ default: m.Toaster })))
 
 function criarClienteQuery() {
   return new QueryClient({
@@ -27,14 +24,10 @@ export function Providers({ children }: { children: ReactNode }) {
   return (
     <QueryClientProvider client={clienteQuery}>
       <ProvedorTema>
-        <LazyMotion features={carregarRecursosMotion}>
-          <MotionConfig reducedMotion="user">
-            <TooltipProvider delayDuration={300}>
-              {children}
-              <Toaster position="top-center" richColors closeButton />
-            </TooltipProvider>
-          </MotionConfig>
-        </LazyMotion>
+        {children}
+        <Suspense fallback={null}>
+          <Toaster position="top-center" richColors closeButton />
+        </Suspense>
       </ProvedorTema>
     </QueryClientProvider>
   )

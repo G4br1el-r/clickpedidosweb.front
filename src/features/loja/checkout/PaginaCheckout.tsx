@@ -1,6 +1,5 @@
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useMutation, useQuery } from "@tanstack/react-query"
-import { cn } from "cn"
 import {
   ArrowLeftIcon,
   BanknoteIcon,
@@ -34,6 +33,7 @@ import { useSacola } from "@/features/loja/sacola/sacola"
 import { useLinhasSacola } from "@/features/loja/sacola/useLinhasSacola"
 import { mascararCep, mascararCpf, mascararMoeda, mascararTelefone } from "@/lib/mascaras"
 import { formatarMoeda } from "@/lib/moeda"
+import { cn } from "@/lib/utils"
 import { consultarCep, type EnderecoCep, listarBairros } from "@/mock/loja/acoes"
 import { criarPedido } from "@/mock/pedidos/acoes"
 import { arredondar } from "@/mock/regras/preco"

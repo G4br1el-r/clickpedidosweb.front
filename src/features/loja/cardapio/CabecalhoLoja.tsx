@@ -1,6 +1,6 @@
-import { cn } from "cn"
 import { BikeIcon, ShoppingBagIcon, WalletIcon } from "lucide-react"
 import { formatarMoeda } from "@/lib/moeda"
+import { cn } from "@/lib/utils"
 import type { LojaPublica } from "@/mock/loja/publica"
 
 interface CabecalhoLojaProps {

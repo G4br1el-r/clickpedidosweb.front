@@ -1,4 +1,4 @@
-import { cn } from "cn"
+import { cn } from "@/lib/utils"
 import { rotuloStatus } from "@/mock/regras/rotulos"
 import type { StatusPedido, TipoEntrega } from "@/types/entidades"
 

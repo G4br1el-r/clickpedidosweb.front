@@ -1,6 +1,6 @@
-import { cn } from "cn"
 import type * as React from "react"
 import { formatarMoeda } from "@/lib/moeda"
+import { cn } from "@/lib/utils"
 
 interface PrecoProps extends React.ComponentProps<"span"> {
   valor: number

@@ -1,4 +1,3 @@
-import { cn } from "cn"
 import type { ReactNode } from "react"
 import {
   Dialog,
@@ -17,6 +16,7 @@ import {
   DrawerTitle,
 } from "@/components/ui/drawer"
 import { useEhCelular } from "@/lib/useEhCelular"
+import { cn } from "@/lib/utils"
 
 interface PainelResponsivoProps {
   aberto: boolean
@@ -52,7 +52,7 @@ export function PainelResponsivo({
         <DrawerContent className={cn("max-h-[92svh]", className)}>
           <div className="flex min-h-0 flex-1 flex-col overflow-y-auto">
             {topo}
-            <DrawerHeader className="text-left">
+            <DrawerHeader className="text-left group-data-[vaul-drawer-direction=bottom]/drawer-content:text-left">
               <DrawerTitle className="font-bold font-heading text-2xl">{titulo}</DrawerTitle>
               <DrawerDescription className={cn(!mostrarDescricao && "sr-only")}>
                 {descricao ?? titulo}

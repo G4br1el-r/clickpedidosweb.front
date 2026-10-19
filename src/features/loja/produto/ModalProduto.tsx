@@ -1,6 +1,6 @@
-import { cn } from "cn"
 import { MinusIcon, PlusIcon } from "lucide-react"
 import { useId, useMemo, useState } from "react"
+import { ProvedorMotion } from "@/app/motion/ProvedorMotion"
 import { Button } from "@/components/ui/button"
 import { FotoProduto } from "@/components/ui/foto-produto"
 import { PainelResponsivo } from "@/components/ui/painel-responsivo"
@@ -8,6 +8,7 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { SeletorQuantidade } from "@/components/ui/seletor-quantidade"
 import { Textarea } from "@/components/ui/textarea"
 import { formatarMoeda } from "@/lib/moeda"
+import { cn } from "@/lib/utils"
 import { arredondar, calcularItem, type OpcaoSelecionada, validarOpcoes } from "@/mock/regras/preco"
 import type { Produto, ProdutoOpcaoGrupo } from "@/types/entidades"
 import {
@@ -47,21 +48,28 @@ export function ModalProduto({
 }: ModalProdutoProps) {
   if (!produto) return null
   return (
-    <PainelResponsivo
-      aberto={aberto}
-      aoMudar={(v) => !v && aoFechar()}
-      titulo={produto.nome}
-      descricao={produto.descricao ?? `Monte o seu ${produto.nome}`}
-      topo={
-        produto.imagemUrl ? (
-          <FotoProduto produto={produto} tamanho="lg" prioridade className="rounded-none" />
-        ) : undefined
-      }
-      rodape={null}
-    >
-      {/* key: reinicia escolhas a cada produto aberto */}
-      <ConteudoProduto key={produto.id} produto={produto} aoAdicionar={aoAdicionar} verbo={verbo} />
-    </PainelResponsivo>
+    <ProvedorMotion>
+      <PainelResponsivo
+        aberto={aberto}
+        aoMudar={(v) => !v && aoFechar()}
+        titulo={produto.nome}
+        descricao={produto.descricao ?? `Monte o seu ${produto.nome}`}
+        topo={
+          produto.imagemUrl ? (
+            <FotoProduto produto={produto} tamanho="lg" prioridade className="rounded-none" />
+          ) : undefined
+        }
+        rodape={null}
+      >
+        {/* key: reinicia escolhas a cada produto aberto */}
+        <ConteudoProduto
+          key={produto.id}
+          produto={produto}
+          aoAdicionar={aoAdicionar}
+          verbo={verbo}
+        />
+      </PainelResponsivo>
+    </ProvedorMotion>
   )
 }
 

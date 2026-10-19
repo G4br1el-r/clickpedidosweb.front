@@ -1,6 +1,6 @@
-import { cn } from "cn"
 import { FotoProduto } from "@/components/ui/foto-produto"
 import { Preco } from "@/components/ui/preco"
+import { cn } from "@/lib/utils"
 import { temPrecoAPartirDe } from "@/mock/regras/preco"
 import type { Produto } from "@/types/entidades"
 

@@ -1,5 +1,4 @@
 import { useMutation, useQuery } from "@tanstack/react-query"
-import { cn } from "cn"
 import {
   CheckIcon,
   CircleCheckBigIcon,
@@ -14,6 +13,7 @@ import { m } from "motion/react"
 import { QRCodeSVG } from "qrcode.react"
 import { useState } from "react"
 import { Link, useParams } from "react-router"
+import { ProvedorMotion } from "@/app/motion/ProvedorMotion"
 import { BadgeStatus } from "@/components/ui/badge-status"
 import { Button } from "@/components/ui/button"
 import {
@@ -29,6 +29,7 @@ import { Spinner } from "@/components/ui/spinner"
 import { formatarHora } from "@/lib/datas"
 import { formatarMoeda } from "@/lib/moeda"
 import { transicao } from "@/lib/motion"
+import { cn } from "@/lib/utils"
 import { obterAcompanhamento, simularPagamento } from "@/mock/pedidos/acoes"
 import type { Acompanhamento } from "@/mock/regras/acompanhamento"
 import { linkWhatsApp } from "@/mock/regras/texto"
@@ -74,7 +75,11 @@ export function PaginaPedido() {
       </main>
     )
 
-  return <Acompanhar a={a} />
+  return (
+    <ProvedorMotion>
+      <Acompanhar a={a} />
+    </ProvedorMotion>
+  )
 }
 
 function Acompanhar({ a }: { a: Acompanhamento }) {
