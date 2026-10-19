@@ -1,13 +1,43 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
-@import "@fontsource-variable/geist";
+@import "@fontsource-variable/bricolage-grotesque/wght.css";
+@import "@fontsource-variable/instrument-sans/wght.css";
 
 @custom-variant dark (&:is(.dark *));
 
+/*
+ * Direção visual "Feira" (ADR 0004): a barraca de pastel da feira. Laranja-queimado da
+ * marca, amarelo-gema, verde de toldo e tinta azul-noite no lugar do preto. As direções
+ * de estudo (Ladrilho, Balcão) sobrescrevem estes tokens em src/features/design/direcoes.css.
+ */
 @theme inline {
-  --font-heading: var(--font-sans);
-  --font-sans: "Geist Variable", sans-serif;
+  --font-heading: var(--fonte-titulo);
+  --font-sans: var(--fonte-texto);
+  --color-marca: var(--marca);
+  --color-marca-forte: var(--marca-forte);
+  --color-gema: var(--gema);
+  --color-gema-foreground: var(--gema-foreground);
+  --color-toldo: var(--toldo);
+  --color-toldo-foreground: var(--toldo-foreground);
+  --color-sucesso: var(--sucesso);
+  --color-sucesso-foreground: var(--sucesso-foreground);
+  --color-aviso: var(--aviso);
+  --color-aviso-foreground: var(--aviso-foreground);
+  --color-status-aguardando: var(--status-aguardando);
+  --color-status-aguardando-foreground: var(--status-aguardando-foreground);
+  --color-status-recebido: var(--status-recebido);
+  --color-status-recebido-foreground: var(--status-recebido-foreground);
+  --color-status-preparo: var(--status-preparo);
+  --color-status-preparo-foreground: var(--status-preparo-foreground);
+  --color-status-pronto: var(--status-pronto);
+  --color-status-pronto-foreground: var(--status-pronto-foreground);
+  --color-status-rota: var(--status-rota);
+  --color-status-rota-foreground: var(--status-rota-foreground);
+  --color-status-concluido: var(--status-concluido);
+  --color-status-concluido-foreground: var(--status-concluido-foreground);
+  --color-status-cancelado: var(--status-cancelado);
+  --color-status-cancelado-foreground: var(--status-cancelado-foreground);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -46,90 +76,180 @@
   --radius-2xl: calc(var(--radius) * 1.8);
   --radius-3xl: calc(var(--radius) * 2.2);
   --radius-4xl: calc(var(--radius) * 2.6);
+  --shadow-elevado: var(--sombra-elevada);
+  --shadow-flutuante: var(--sombra-flutuante);
 }
 
 :root {
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.87 0 0);
-  --chart-2: oklch(0.556 0 0);
-  --chart-3: oklch(0.439 0 0);
-  --chart-4: oklch(0.371 0 0);
-  --chart-5: oklch(0.269 0 0);
-  --radius: 0.625rem;
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+  --fonte-titulo: "Bricolage Grotesque Variable", "Segoe UI", system-ui, sans-serif;
+  --fonte-texto: "Instrument Sans Variable", "Segoe UI", system-ui, sans-serif;
+  --radius: 0.875rem;
+
+  --marca: #e8620e;
+  --marca-forte: #c44a0b;
+  --gema: #f2a900;
+  --gema-foreground: #2a1d00;
+  --toldo: #1e6b4f;
+  --toldo-foreground: #ffffff;
+
+  --background: #fffcf7;
+  --foreground: #1b2433;
+  --card: #ffffff;
+  --card-foreground: #1b2433;
+  --popover: #ffffff;
+  --popover-foreground: #1b2433;
+  --primary: #c44a0b;
+  --primary-foreground: #ffffff;
+  --secondary: #f3ece1;
+  --secondary-foreground: #1b2433;
+  --muted: #f3ece1;
+  --muted-foreground: #5b6170;
+  --accent: #fbe7d6;
+  --accent-foreground: #7a2e06;
+  --destructive: #b42318;
+  --border: #e8dfd1;
+  --input: #ddd3c3;
+  --ring: #c44a0b;
+  --sucesso: #1e6b4f;
+  --sucesso-foreground: #ffffff;
+  --aviso: #f2a900;
+  --aviso-foreground: #2a1d00;
+
+  --status-aguardando: #fff1c7;
+  --status-aguardando-foreground: #6b4a00;
+  --status-recebido: #ffe3cf;
+  --status-recebido-foreground: #8f3407;
+  --status-preparo: #dfe8ff;
+  --status-preparo-foreground: #1f3f99;
+  --status-pronto: #d6f0e3;
+  --status-pronto-foreground: #14513c;
+  --status-rota: #ece3ff;
+  --status-rota-foreground: #4f2a99;
+  --status-concluido: #eceef2;
+  --status-concluido-foreground: #3d4452;
+  --status-cancelado: #fde2e0;
+  --status-cancelado-foreground: #9b1c14;
+
+  --sombra-elevada: 0 1px 2px rgb(27 36 51 / 0.06), 0 4px 12px -2px rgb(27 36 51 / 0.08);
+  --sombra-flutuante: 0 12px 32px -8px rgb(27 36 51 / 0.22), 0 2px 6px rgb(27 36 51 / 0.08);
+
+  --chart-1: #c44a0b;
+  --chart-2: #1e6b4f;
+  --chart-3: #f2a900;
+  --chart-4: #1f3f99;
+  --chart-5: #5b6170;
+  --sidebar: #fbf6ee;
+  --sidebar-foreground: #1b2433;
+  --sidebar-primary: #c44a0b;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #f3ece1;
+  --sidebar-accent-foreground: #1b2433;
+  --sidebar-border: #e8dfd1;
+  --sidebar-ring: #c44a0b;
 }
 
 .dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
-  --chart-1: oklch(0.87 0 0);
-  --chart-2: oklch(0.556 0 0);
-  --chart-3: oklch(0.439 0 0);
-  --chart-4: oklch(0.371 0 0);
-  --chart-5: oklch(0.269 0 0);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
+  --marca: #ff7a2e;
+  --marca-forte: #ff8c47;
+  --gema: #ffbf2e;
+  --gema-foreground: #2a1d00;
+  --toldo: #3fb589;
+  --toldo-foreground: #071a12;
+
+  --background: #11151d;
+  --foreground: #f4efe7;
+  --card: #1a202b;
+  --card-foreground: #f4efe7;
+  --popover: #1f2632;
+  --popover-foreground: #f4efe7;
+  --primary: #ff7a2e;
+  --primary-foreground: #1a0b02;
+  --secondary: #262d3a;
+  --secondary-foreground: #f4efe7;
+  --muted: #232a36;
+  --muted-foreground: #a9afbc;
+  --accent: #3a2417;
+  --accent-foreground: #ffd2b5;
+  --destructive: #ff6b5e;
+  --border: #2c3442;
+  --input: #364051;
+  --ring: #ff7a2e;
+  --sucesso: #3fb589;
+  --sucesso-foreground: #071a12;
+  --aviso: #ffbf2e;
+  --aviso-foreground: #2a1d00;
+
+  --status-aguardando: #3d3110;
+  --status-aguardando-foreground: #ffd36b;
+  --status-recebido: #47240f;
+  --status-recebido-foreground: #ffb07f;
+  --status-preparo: #1d2a52;
+  --status-preparo-foreground: #a9c1ff;
+  --status-pronto: #123a2c;
+  --status-pronto-foreground: #7fdcb5;
+  --status-rota: #2e2150;
+  --status-rota-foreground: #c9b2ff;
+  --status-concluido: #2a303b;
+  --status-concluido-foreground: #c3c8d2;
+  --status-cancelado: #4a1d1a;
+  --status-cancelado-foreground: #ff9d93;
+
+  --sombra-elevada: 0 1px 2px rgb(0 0 0 / 0.4), 0 4px 12px -2px rgb(0 0 0 / 0.35);
+  --sombra-flutuante: 0 16px 40px -8px rgb(0 0 0 / 0.6), 0 2px 6px rgb(0 0 0 / 0.4);
+
+  --sidebar: #151a23;
+  --sidebar-foreground: #f4efe7;
+  --sidebar-primary: #ff7a2e;
+  --sidebar-primary-foreground: #1a0b02;
+  --sidebar-accent: #232a36;
+  --sidebar-accent-foreground: #f4efe7;
+  --sidebar-border: #2c3442;
+  --sidebar-ring: #ff7a2e;
 }
 
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
+  html {
+    @apply font-sans;
+    -webkit-tap-highlight-color: transparent;
+    text-rendering: optimizeLegibility;
+  }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground antialiased;
+  }
+  h1,
+  h2,
+  h3 {
+    @apply font-heading;
+    text-wrap: balance;
   }
   button:not(:disabled),
   [role="button"]:not(:disabled) {
     cursor: pointer;
   }
-  html {
-    @apply font-sans;
+}
+
+@layer utilities {
+  /* Números de preço e contagem com largura fixa: não "dançam" quando mudam. */
+  .numeros {
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* O toldo listrado da barraca: o elemento marcante da direção Feira. */
+  .toldo {
+    background-image: repeating-linear-gradient(
+      90deg,
+      var(--marca) 0 22px,
+      var(--background) 22px 44px
+    );
+  }
+  .toldo-franja {
+    height: 10px;
+    background-image: radial-gradient(circle at 11px 0, var(--marca) 10px, transparent 10.5px);
+    background-size: 22px 10px;
+    background-repeat: repeat-x;
   }
 }
 
