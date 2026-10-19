@@ -53,8 +53,12 @@ export function criarBanco<T extends { versao: number }>(opcoes: OpcoesBanco<T>)
   return {
     ler: () => structuredClone(atual()),
     atualizar(alterar) {
-      const copia = structuredClone(atual())
+      const antes = atual()
+      const copia = structuredClone(antes)
       alterar(copia)
+      // Leituras que só "conferem" algo (ex.: expiração de pagamento) não podem disparar
+      // aviso: o aviso recarrega as telas, que leem de novo, num laço sem fim.
+      if (JSON.stringify(copia) === JSON.stringify(antes)) return structuredClone(antes)
       dados = copia
       salvar(copia)
       avisar()

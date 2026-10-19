@@ -112,6 +112,21 @@ describe("criarBanco", () => {
     expect(avisos).toBe(1)
   })
 
+  it("atualizar sem mudança real não salva nem avisa (evita laço de recarga)", () => {
+    const armazenamento = armazenamentoFalso()
+    const banco = criar(armazenamento)
+    let avisos = 0
+    banco.inscrever(() => {
+      avisos++
+    })
+    banco.atualizar(() => {})
+    banco.atualizar((d) => {
+      d.nome = "Inicial"
+    })
+    expect(avisos).toBe(0)
+    expect(armazenamento.conteudo["teste"]).toBeUndefined()
+  })
+
   it("avisa os inscritos quando os dados mudam", () => {
     const banco = criar(armazenamentoFalso())
     const avisos: string[] = []

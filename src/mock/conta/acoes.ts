@@ -19,12 +19,28 @@ function ler(): Sessao | null {
   }
 }
 
-function gravar(sessao: Sessao | null) {
+const EVENTO = "cp-sessao"
+
+function gravar(sessao: Sessao | null, avisar = true) {
   try {
     if (sessao) window.localStorage.setItem(CHAVE, JSON.stringify(sessao))
     else window.localStorage.removeItem(CHAVE)
   } catch {
     // segue sem sessão persistida
+  }
+  if (avisar) window.dispatchEvent(new Event(EVENTO))
+}
+
+/** Avisa quando a pessoa entra ou sai (nesta aba ou em outra). */
+export function ouvirSessao(aoMudar: () => void): () => void {
+  const deOutraAba = (e: StorageEvent) => {
+    if (e.key === CHAVE || e.key === null) aoMudar()
+  }
+  window.addEventListener(EVENTO, aoMudar)
+  window.addEventListener("storage", deOutraAba)
+  return () => {
+    window.removeEventListener(EVENTO, aoMudar)
+    window.removeEventListener("storage", deOutraAba)
   }
 }
 
@@ -33,7 +49,7 @@ export function obterSessao(agora: Date = new Date()): Sessao | null {
   const s = ler()
   if (!s || new Date(s.expiraEm) <= agora) return null
   const renovada = { ...s, expiraEm: new Date(agora.getTime() + DURACAO_MS).toISOString() }
-  gravar(renovada)
+  gravar(renovada, false)
   return renovada
 }
 
