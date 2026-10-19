@@ -1,0 +1,1133 @@
+{
+  "loja": {
+    "nomeLoja": "Quiosque do Mineiro",
+    "lojaAberta": false,
+    "taxaEntrega": 5,
+    "pedidoMinimo": 15,
+    "tempoEntrega": "40–60 min",
+    "tempoRetirada": "20–30 min"
+  },
+  "categorias": [
+    {
+      "id": 1,
+      "nome": "Pastéis",
+      "produtos": [
+        {
+          "id": 1,
+          "nome": "Pastel de Carne",
+          "descricao": "Carne moída temperada da casa.",
+          "preco": 9,
+          "imagemUrl": null,
+          "disponivel": true,
+          "gruposOpcoes": []
+        },
+        {
+          "id": 2,
+          "nome": "Pastel de Queijo",
+          "descricao": "Muçarela derretida.",
+          "preco": 9,
+          "imagemUrl": null,
+          "disponivel": true,
+          "gruposOpcoes": []
+        },
+        {
+          "id": 3,
+          "nome": "Pastel de Frango com Catupiry",
+          "descricao": "Frango desfiado com catupiry.",
+          "preco": 11,
+          "imagemUrl": null,
+          "disponivel": true,
+          "gruposOpcoes": []
+        },
+        {
+          "id": 4,
+          "nome": "Pastel de Pizza",
+          "descricao": "Muçarela, presunto, tomate e orégano.",
+          "preco": 11,
+          "imagemUrl": null,
+          "disponivel": true,
+          "gruposOpcoes": []
+        },
+        {
+          "id": 5,
+          "nome": "Pastel de Carne com Queijo",
+          "descricao": "O clássico com muçarela.",
+          "preco": 12,
+          "imagemUrl": null,
+          "disponivel": true,
+          "gruposOpcoes": []
+        },
+        {
+          "id": 6,
+          "nome": "Pastel de Palmito",
+          "descricao": "Palmito refogado com temperinho verde.",
+          "preco": 12,
+          "imagemUrl": null,
+          "disponivel": true,
+          "gruposOpcoes": []
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "nome": "Lanches",
+      "produtos": [
+        {
+          "id": 7,
+          "nome": "X-Burger",
+          "descricao": "Hambúrguer, queijo e maionese no pão de hambúrguer.",
+          "preco": 16,
+          "imagemUrl": null,
+          "disponivel": true,
+          "gruposOpcoes": []
+        },
+        {
+          "id": 8,
+          "nome": "X-Salada",
+          "descricao": "Hambúrguer, queijo, alface, tomate e maionese.",
+          "preco": 18,
+          "imagemUrl": null,
+          "disponivel": true,
+          "gruposOpcoes": []
+        },
+        {
+          "id": 9,
+          "nome": "X-Bacon",
+          "descricao": "Hambúrguer, queijo, bacon, alface e tomate.",
+          "preco": 22,
+          "imagemUrl": null,
+          "disponivel": true,
+          "gruposOpcoes": []
+        },
+        {
+          "id": 10,
+          "nome": "X-Tudo",
+          "descricao": "Hambúrguer, queijo, presunto, ovo, bacon, salada e batata palha.",
+          "preco": 27,
+          "imagemUrl": null,
+          "disponivel": true,
+          "gruposOpcoes": []
+        },
+        {
+          "id": 11,
+          "nome": "Misto Quente",
+          "descricao": "Presunto e queijo na chapa.",
+          "preco": 10,
+          "imagemUrl": null,
+          "disponivel": true,
+          "gruposOpcoes": []
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "nome": "Açaí",
+      "produtos": [
+        {
+          "id": 12,
+          "nome": "Açaí 300 ml",
+          "descricao": "Com 2 acompanhamentos. Escreva na observação quais você quer.",
+          "preco": 15,
+          "imagemUrl": null,
+          "disponivel": true,
+          "gruposOpcoes": []
+        },
+        {
+          "id": 13,
+          "nome": "Açaí 500 ml",
+          "descricao": "Com 3 acompanhamentos. Escreva na observação quais você quer.",
+          "preco": 20,
+          "imagemUrl": null,
+          "disponivel": true,
+          "gruposOpcoes": []
+        },
+        {
+          "id": 14,
+          "nome": "Açaí 700 ml",
+          "descricao": "Com 4 acompanhamentos. Escreva na observação quais você quer.",
+          "preco": 26,
+          "imagemUrl": null,
+          "disponivel": true,
+          "gruposOpcoes": []
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "nome": "Porções",
+      "produtos": [
+        {
+          "id": 15,
+          "nome": "Batata Frita",
+          "descricao": "Porção de 400 g.",
+          "preco": 22,
+          "imagemUrl": null,
+          "disponivel": true,
+          "gruposOpcoes": []
+        },
+        {
+          "id": 38,
+          "nome": "Calabresa Acebolada",
+          "descricao": "Porção de calabresa fatiada acebolada. Escolha o tamanho (meia ou inteira).",
+          "preco": 23,
+          "imagemUrl": null,
+          "disponivel": true,
+          "gruposOpcoes": [
+            {
+              "id": 29,
+              "nome": "Tamanho da Porção",
+              "minimo": 1,
+              "maximo": 1,
+              "gratisAte": 0,
+              "itens": [
+                { "id": 365, "nome": "Meia Porção", "precoAdicional": 0 },
+                { "id": 366, "nome": "Porção Inteira", "precoAdicional": 12 }
+              ]
+            }
+          ]
+        },
+        {
+          "id": 39,
+          "nome": "Fritas com Cheddar e Bacon",
+          "descricao": "Batata frita crocante coberta com cheddar cremoso e cubos de bacon. Escolha o tamanho (meia ou inteira).",
+          "preco": 25,
+          "imagemUrl": null,
+          "disponivel": true,
+          "gruposOpcoes": [
+            {
+              "id": 30,
+              "nome": "Tamanho da Porção",
+              "minimo": 1,
+              "maximo": 1,
+              "gratisAte": 0,
+              "itens": [
+                { "id": 367, "nome": "Meia Porção", "precoAdicional": 0 },
+                { "id": 368, "nome": "Porção Inteira", "precoAdicional": 15 }
+              ]
+            }
+          ]
+        },
+        {
+          "id": 16,
+          "nome": "Mini Pastéis",
+          "descricao": "12 unidades sortidas.",
+          "preco": 28,
+          "imagemUrl": null,
+          "disponivel": true,
+          "gruposOpcoes": []
+        },
+        {
+          "id": 40,
+          "nome": "Fritas com Queijo",
+          "descricao": "Batata frita crocante coberta com queijo muçarela derretido. Escolha o tamanho (meia ou inteira).",
+          "preco": 23,
+          "imagemUrl": null,
+          "disponivel": true,
+          "gruposOpcoes": [
+            {
+              "id": 31,
+              "nome": "Tamanho da Porção",
+              "minimo": 1,
+              "maximo": 1,
+              "gratisAte": 0,
+              "itens": [
+                { "id": 369, "nome": "Meia Porção", "precoAdicional": 0 },
+                { "id": 370, "nome": "Porção Inteira", "precoAdicional": 12 }
+              ]
+            }
+          ]
+        },
+        {
+          "id": 41,
+          "nome": "Filé de Tilápia",
+          "descricao": "Iscas de filé de tilápia empanadas e crocantes. Acompanha limão. (Não fazemos meia porção).",
+          "preco": 55,
+          "imagemUrl": null,
+          "disponivel": true,
+          "gruposOpcoes": []
+        },
+        {
+          "id": 42,
+          "nome": "Camarão",
+          "descricao": "Camarão empanado e frito sequinho e crocante. (Não fazemos meia porção).",
+          "preco": 70,
+          "imagemUrl": null,
+          "disponivel": true,
+          "gruposOpcoes": []
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "nome": "Bebidas",
+      "produtos": [
+        {
+          "id": 17,
+          "nome": "Caldo de Cana 500 ml",
+          "descricao": "Puro ou com limão. Diga na observação.",
+          "preco": 9,
+          "imagemUrl": null,
+          "disponivel": true,
+          "gruposOpcoes": []
+        },
+        {
+          "id": 18,
+          "nome": "Refrigerante Lata",
+          "descricao": "350 ml. Diga o sabor na observação.",
+          "preco": 6,
+          "imagemUrl": null,
+          "disponivel": true,
+          "gruposOpcoes": []
+        },
+        {
+          "id": 19,
+          "nome": "Suco Natural 500 ml",
+          "descricao": "Laranja, limão ou maracujá.",
+          "preco": 10,
+          "imagemUrl": null,
+          "disponivel": true,
+          "gruposOpcoes": []
+        },
+        {
+          "id": 20,
+          "nome": "Água Mineral",
+          "descricao": "500 ml, com ou sem gás.",
+          "preco": 4,
+          "imagemUrl": null,
+          "disponivel": true,
+          "gruposOpcoes": []
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "nome": "Combos",
+      "produtos": [
+        {
+          "id": 35,
+          "nome": "Combo 1",
+          "descricao": "2 X Burger + Meia Fritas Cheddar e Bacon",
+          "preco": 51,
+          "imagemUrl": null,
+          "disponivel": true,
+          "gruposOpcoes": []
+        },
+        {
+          "id": 36,
+          "nome": "Combo 2",
+          "descricao": "2 X Salada + Meia Fritas Cheddar e Bacon",
+          "preco": 56,
+          "imagemUrl": null,
+          "disponivel": true,
+          "gruposOpcoes": []
+        },
+        {
+          "id": 37,
+          "nome": "Combo 3",
+          "descricao": "2 X Bacon + Meia Fritas Cheddar e Bacon",
+          "preco": 64,
+          "imagemUrl": null,
+          "disponivel": true,
+          "gruposOpcoes": []
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "nome": "Açaí Gourmet",
+      "produtos": [
+        {
+          "id": 21,
+          "nome": "Açaí Paçoca",
+          "descricao": "Açaí cremoso, paçoca, leite condensado e creme de amendoim.",
+          "preco": 18,
+          "imagemUrl": null,
+          "disponivel": true,
+          "gruposOpcoes": [
+            {
+              "id": 1,
+              "nome": "Escolha o tamanho",
+              "minimo": 1,
+              "maximo": 1,
+              "gratisAte": 0,
+              "itens": [
+                { "id": 1, "nome": "300 ml", "precoAdicional": 0 },
+                { "id": 2, "nome": "400 ml", "precoAdicional": 2 },
+                { "id": 3, "nome": "500 ml", "precoAdicional": 4 },
+                { "id": 4, "nome": "700 ml", "precoAdicional": 7 },
+                { "id": 5, "nome": "Balde 1 Litro", "precoAdicional": 24 }
+              ]
+            },
+            {
+              "id": 2,
+              "nome": "Adicionais (todos pagos)",
+              "minimo": 0,
+              "maximo": 30,
+              "gratisAte": 0,
+              "itens": [
+                { "id": 6, "nome": "Coco Ralado", "precoAdicional": 1 },
+                { "id": 7, "nome": "Granulado", "precoAdicional": 1 },
+                { "id": 8, "nome": "Sucrilhos", "precoAdicional": 1 },
+                { "id": 9, "nome": "Granola", "precoAdicional": 1 },
+                { "id": 10, "nome": "Banana", "precoAdicional": 1 },
+                { "id": 11, "nome": "Paçoca", "precoAdicional": 1 },
+                { "id": 12, "nome": "Caldas", "precoAdicional": 1 },
+                { "id": 13, "nome": "Leite Condensado", "precoAdicional": 1.5 },
+                { "id": 14, "nome": "Leite em Pó", "precoAdicional": 1.5 },
+                { "id": 15, "nome": "Confete", "precoAdicional": 3.5 },
+                { "id": 16, "nome": "Chocoball", "precoAdicional": 3.5 },
+                { "id": 17, "nome": "Ovomaltine", "precoAdicional": 3.5 },
+                { "id": 18, "nome": "Morango Fresco", "precoAdicional": 3.5 },
+                { "id": 19, "nome": "Kit Kat", "precoAdicional": 3.5 },
+                { "id": 20, "nome": "Sonho de Valsa", "precoAdicional": 3.5 },
+                { "id": 21, "nome": "Ouro Branco", "precoAdicional": 3.5 },
+                { "id": 22, "nome": "Creme de Ninho", "precoAdicional": 4.5 },
+                { "id": 23, "nome": "Creme de Morango", "precoAdicional": 4.5 },
+                { "id": 24, "nome": "Creme de Ovomaltine", "precoAdicional": 4.5 },
+                { "id": 25, "nome": "Creme de Amendoim", "precoAdicional": 4.5 },
+                { "id": 26, "nome": "Creme de Avelã (Nutella)", "precoAdicional": 4.5 }
+              ]
+            }
+          ]
+        },
+        {
+          "id": 22,
+          "nome": "Açaí Nutella",
+          "descricao": "Açaí cremoso, leite condensado, creme de leite Ninho e creme de avelã (Nutella).",
+          "preco": 18,
+          "imagemUrl": null,
+          "disponivel": true,
+          "gruposOpcoes": [
+            {
+              "id": 3,
+              "nome": "Escolha o tamanho",
+              "minimo": 1,
+              "maximo": 1,
+              "gratisAte": 0,
+              "itens": [
+                { "id": 27, "nome": "300 ml", "precoAdicional": 0 },
+                { "id": 28, "nome": "400 ml", "precoAdicional": 2 },
+                { "id": 29, "nome": "500 ml", "precoAdicional": 4 },
+                { "id": 30, "nome": "700 ml", "precoAdicional": 7 },
+                { "id": 31, "nome": "Balde 1 Litro", "precoAdicional": 24 }
+              ]
+            },
+            {
+              "id": 4,
+              "nome": "Adicionais (todos pagos)",
+              "minimo": 0,
+              "maximo": 30,
+              "gratisAte": 0,
+              "itens": [
+                { "id": 32, "nome": "Coco Ralado", "precoAdicional": 1 },
+                { "id": 33, "nome": "Granulado", "precoAdicional": 1 },
+                { "id": 34, "nome": "Sucrilhos", "precoAdicional": 1 },
+                { "id": 35, "nome": "Granola", "precoAdicional": 1 },
+                { "id": 36, "nome": "Banana", "precoAdicional": 1 },
+                { "id": 37, "nome": "Paçoca", "precoAdicional": 1 },
+                { "id": 38, "nome": "Caldas", "precoAdicional": 1 },
+                { "id": 39, "nome": "Leite Condensado", "precoAdicional": 1.5 },
+                { "id": 40, "nome": "Leite em Pó", "precoAdicional": 1.5 },
+                { "id": 41, "nome": "Confete", "precoAdicional": 3.5 },
+                { "id": 42, "nome": "Chocoball", "precoAdicional": 3.5 },
+                { "id": 43, "nome": "Ovomaltine", "precoAdicional": 3.5 },
+                { "id": 44, "nome": "Morango Fresco", "precoAdicional": 3.5 },
+                { "id": 45, "nome": "Kit Kat", "precoAdicional": 3.5 },
+                { "id": 46, "nome": "Sonho de Valsa", "precoAdicional": 3.5 },
+                { "id": 47, "nome": "Ouro Branco", "precoAdicional": 3.5 },
+                { "id": 48, "nome": "Creme de Ninho", "precoAdicional": 4.5 },
+                { "id": 49, "nome": "Creme de Morango", "precoAdicional": 4.5 },
+                { "id": 50, "nome": "Creme de Ovomaltine", "precoAdicional": 4.5 },
+                { "id": 51, "nome": "Creme de Amendoim", "precoAdicional": 4.5 },
+                { "id": 52, "nome": "Creme de Avelã (Nutella)", "precoAdicional": 4.5 }
+              ]
+            }
+          ]
+        },
+        {
+          "id": 23,
+          "nome": "Açaí Açaitella",
+          "descricao": "Açaí cremoso, leite Ninho, creme de avelã e leite condensado.",
+          "preco": 18,
+          "imagemUrl": null,
+          "disponivel": true,
+          "gruposOpcoes": [
+            {
+              "id": 5,
+              "nome": "Escolha o tamanho",
+              "minimo": 1,
+              "maximo": 1,
+              "gratisAte": 0,
+              "itens": [
+                { "id": 53, "nome": "300 ml", "precoAdicional": 0 },
+                { "id": 54, "nome": "400 ml", "precoAdicional": 2 },
+                { "id": 55, "nome": "500 ml", "precoAdicional": 4 },
+                { "id": 56, "nome": "700 ml", "precoAdicional": 7 },
+                { "id": 57, "nome": "Balde 1 Litro", "precoAdicional": 24 }
+              ]
+            },
+            {
+              "id": 6,
+              "nome": "Adicionais (todos pagos)",
+              "minimo": 0,
+              "maximo": 30,
+              "gratisAte": 0,
+              "itens": [
+                { "id": 58, "nome": "Coco Ralado", "precoAdicional": 1 },
+                { "id": 59, "nome": "Granulado", "precoAdicional": 1 },
+                { "id": 60, "nome": "Sucrilhos", "precoAdicional": 1 },
+                { "id": 61, "nome": "Granola", "precoAdicional": 1 },
+                { "id": 62, "nome": "Banana", "precoAdicional": 1 },
+                { "id": 63, "nome": "Paçoca", "precoAdicional": 1 },
+                { "id": 64, "nome": "Caldas", "precoAdicional": 1 },
+                { "id": 65, "nome": "Leite Condensado", "precoAdicional": 1.5 },
+                { "id": 66, "nome": "Leite em Pó", "precoAdicional": 1.5 },
+                { "id": 67, "nome": "Confete", "precoAdicional": 3.5 },
+                { "id": 68, "nome": "Chocoball", "precoAdicional": 3.5 },
+                { "id": 69, "nome": "Ovomaltine", "precoAdicional": 3.5 },
+                { "id": 70, "nome": "Morango Fresco", "precoAdicional": 3.5 },
+                { "id": 71, "nome": "Kit Kat", "precoAdicional": 3.5 },
+                { "id": 72, "nome": "Sonho de Valsa", "precoAdicional": 3.5 },
+                { "id": 73, "nome": "Ouro Branco", "precoAdicional": 3.5 },
+                { "id": 74, "nome": "Creme de Ninho", "precoAdicional": 4.5 },
+                { "id": 75, "nome": "Creme de Morango", "precoAdicional": 4.5 },
+                { "id": 76, "nome": "Creme de Ovomaltine", "precoAdicional": 4.5 },
+                { "id": 77, "nome": "Creme de Amendoim", "precoAdicional": 4.5 },
+                { "id": 78, "nome": "Creme de Avelã (Nutella)", "precoAdicional": 4.5 }
+              ]
+            }
+          ]
+        },
+        {
+          "id": 24,
+          "nome": "Açaí Ninho Splash",
+          "descricao": "Açaí cremoso, leite Ninho, leite condensado e creme de Ninho.",
+          "preco": 18,
+          "imagemUrl": null,
+          "disponivel": true,
+          "gruposOpcoes": [
+            {
+              "id": 7,
+              "nome": "Escolha o tamanho",
+              "minimo": 1,
+              "maximo": 1,
+              "gratisAte": 0,
+              "itens": [
+                { "id": 79, "nome": "300 ml", "precoAdicional": 0 },
+                { "id": 80, "nome": "400 ml", "precoAdicional": 2 },
+                { "id": 81, "nome": "500 ml", "precoAdicional": 4 },
+                { "id": 82, "nome": "700 ml", "precoAdicional": 7 },
+                { "id": 83, "nome": "Balde 1 Litro", "precoAdicional": 24 }
+              ]
+            },
+            {
+              "id": 8,
+              "nome": "Adicionais (todos pagos)",
+              "minimo": 0,
+              "maximo": 30,
+              "gratisAte": 0,
+              "itens": [
+                { "id": 84, "nome": "Coco Ralado", "precoAdicional": 1 },
+                { "id": 85, "nome": "Granulado", "precoAdicional": 1 },
+                { "id": 86, "nome": "Sucrilhos", "precoAdicional": 1 },
+                { "id": 87, "nome": "Granola", "precoAdicional": 1 },
+                { "id": 88, "nome": "Banana", "precoAdicional": 1 },
+                { "id": 89, "nome": "Paçoca", "precoAdicional": 1 },
+                { "id": 90, "nome": "Caldas", "precoAdicional": 1 },
+                { "id": 91, "nome": "Leite Condensado", "precoAdicional": 1.5 },
+                { "id": 92, "nome": "Leite em Pó", "precoAdicional": 1.5 },
+                { "id": 93, "nome": "Confete", "precoAdicional": 3.5 },
+                { "id": 94, "nome": "Chocoball", "precoAdicional": 3.5 },
+                { "id": 95, "nome": "Ovomaltine", "precoAdicional": 3.5 },
+                { "id": 96, "nome": "Morango Fresco", "precoAdicional": 3.5 },
+                { "id": 97, "nome": "Kit Kat", "precoAdicional": 3.5 },
+                { "id": 98, "nome": "Sonho de Valsa", "precoAdicional": 3.5 },
+                { "id": 99, "nome": "Ouro Branco", "precoAdicional": 3.5 },
+                { "id": 100, "nome": "Creme de Ninho", "precoAdicional": 4.5 },
+                { "id": 101, "nome": "Creme de Morango", "precoAdicional": 4.5 },
+                { "id": 102, "nome": "Creme de Ovomaltine", "precoAdicional": 4.5 },
+                { "id": 103, "nome": "Creme de Amendoim", "precoAdicional": 4.5 },
+                { "id": 104, "nome": "Creme de Avelã (Nutella)", "precoAdicional": 4.5 }
+              ]
+            }
+          ]
+        },
+        {
+          "id": 25,
+          "nome": "Açaí Moranguete",
+          "descricao": "Açaí cremoso, creme de morango, creme de avelã e morango fresco.",
+          "preco": 18,
+          "imagemUrl": null,
+          "disponivel": true,
+          "gruposOpcoes": [
+            {
+              "id": 9,
+              "nome": "Escolha o tamanho",
+              "minimo": 1,
+              "maximo": 1,
+              "gratisAte": 0,
+              "itens": [
+                { "id": 105, "nome": "300 ml", "precoAdicional": 0 },
+                { "id": 106, "nome": "400 ml", "precoAdicional": 2 },
+                { "id": 107, "nome": "500 ml", "precoAdicional": 4 },
+                { "id": 108, "nome": "700 ml", "precoAdicional": 7 },
+                { "id": 109, "nome": "Balde 1 Litro", "precoAdicional": 24 }
+              ]
+            },
+            {
+              "id": 10,
+              "nome": "Adicionais (todos pagos)",
+              "minimo": 0,
+              "maximo": 30,
+              "gratisAte": 0,
+              "itens": [
+                { "id": 110, "nome": "Coco Ralado", "precoAdicional": 1 },
+                { "id": 111, "nome": "Granulado", "precoAdicional": 1 },
+                { "id": 112, "nome": "Sucrilhos", "precoAdicional": 1 },
+                { "id": 113, "nome": "Granola", "precoAdicional": 1 },
+                { "id": 114, "nome": "Banana", "precoAdicional": 1 },
+                { "id": 115, "nome": "Paçoca", "precoAdicional": 1 },
+                { "id": 116, "nome": "Caldas", "precoAdicional": 1 },
+                { "id": 117, "nome": "Leite Condensado", "precoAdicional": 1.5 },
+                { "id": 118, "nome": "Leite em Pó", "precoAdicional": 1.5 },
+                { "id": 119, "nome": "Confete", "precoAdicional": 3.5 },
+                { "id": 120, "nome": "Chocoball", "precoAdicional": 3.5 },
+                { "id": 121, "nome": "Ovomaltine", "precoAdicional": 3.5 },
+                { "id": 122, "nome": "Morango Fresco", "precoAdicional": 3.5 },
+                { "id": 123, "nome": "Kit Kat", "precoAdicional": 3.5 },
+                { "id": 124, "nome": "Sonho de Valsa", "precoAdicional": 3.5 },
+                { "id": 125, "nome": "Ouro Branco", "precoAdicional": 3.5 },
+                { "id": 126, "nome": "Creme de Ninho", "precoAdicional": 4.5 },
+                { "id": 127, "nome": "Creme de Morango", "precoAdicional": 4.5 },
+                { "id": 128, "nome": "Creme de Ovomaltine", "precoAdicional": 4.5 },
+                { "id": 129, "nome": "Creme de Amendoim", "precoAdicional": 4.5 },
+                { "id": 130, "nome": "Creme de Avelã (Nutella)", "precoAdicional": 4.5 }
+              ]
+            }
+          ]
+        },
+        {
+          "id": 26,
+          "nome": "Açaí Trufado de Maracujá",
+          "descricao": "Açaí cremoso, creme de avelã e mousse de maracujá.",
+          "preco": 18,
+          "imagemUrl": null,
+          "disponivel": true,
+          "gruposOpcoes": [
+            {
+              "id": 11,
+              "nome": "Escolha o tamanho",
+              "minimo": 1,
+              "maximo": 1,
+              "gratisAte": 0,
+              "itens": [
+                { "id": 131, "nome": "300 ml", "precoAdicional": 0 },
+                { "id": 132, "nome": "400 ml", "precoAdicional": 2 },
+                { "id": 133, "nome": "500 ml", "precoAdicional": 4 },
+                { "id": 134, "nome": "700 ml", "precoAdicional": 7 },
+                { "id": 135, "nome": "Balde 1 Litro", "precoAdicional": 24 }
+              ]
+            },
+            {
+              "id": 12,
+              "nome": "Adicionais (todos pagos)",
+              "minimo": 0,
+              "maximo": 30,
+              "gratisAte": 0,
+              "itens": [
+                { "id": 136, "nome": "Coco Ralado", "precoAdicional": 1 },
+                { "id": 137, "nome": "Granulado", "precoAdicional": 1 },
+                { "id": 138, "nome": "Sucrilhos", "precoAdicional": 1 },
+                { "id": 139, "nome": "Granola", "precoAdicional": 1 },
+                { "id": 140, "nome": "Banana", "precoAdicional": 1 },
+                { "id": 141, "nome": "Paçoca", "precoAdicional": 1 },
+                { "id": 142, "nome": "Caldas", "precoAdicional": 1 },
+                { "id": 143, "nome": "Leite Condensado", "precoAdicional": 1.5 },
+                { "id": 144, "nome": "Leite em Pó", "precoAdicional": 1.5 },
+                { "id": 145, "nome": "Confete", "precoAdicional": 3.5 },
+                { "id": 146, "nome": "Chocoball", "precoAdicional": 3.5 },
+                { "id": 147, "nome": "Ovomaltine", "precoAdicional": 3.5 },
+                { "id": 148, "nome": "Morango Fresco", "precoAdicional": 3.5 },
+                { "id": 149, "nome": "Kit Kat", "precoAdicional": 3.5 },
+                { "id": 150, "nome": "Sonho de Valsa", "precoAdicional": 3.5 },
+                { "id": 151, "nome": "Ouro Branco", "precoAdicional": 3.5 },
+                { "id": 152, "nome": "Creme de Ninho", "precoAdicional": 4.5 },
+                { "id": 153, "nome": "Creme de Morango", "precoAdicional": 4.5 },
+                { "id": 154, "nome": "Creme de Ovomaltine", "precoAdicional": 4.5 },
+                { "id": 155, "nome": "Creme de Amendoim", "precoAdicional": 4.5 },
+                { "id": 156, "nome": "Creme de Avelã (Nutella)", "precoAdicional": 4.5 }
+              ]
+            }
+          ]
+        },
+        {
+          "id": 27,
+          "nome": "Açaí Cookies & Cream",
+          "descricao": "Açaí cremoso, leite condensado, creme de cookies cream e cookies crocante.",
+          "preco": 18,
+          "imagemUrl": null,
+          "disponivel": true,
+          "gruposOpcoes": [
+            {
+              "id": 13,
+              "nome": "Escolha o tamanho",
+              "minimo": 1,
+              "maximo": 1,
+              "gratisAte": 0,
+              "itens": [
+                { "id": 157, "nome": "300 ml", "precoAdicional": 0 },
+                { "id": 158, "nome": "400 ml", "precoAdicional": 2 },
+                { "id": 159, "nome": "500 ml", "precoAdicional": 4 },
+                { "id": 160, "nome": "700 ml", "precoAdicional": 7 },
+                { "id": 161, "nome": "Balde 1 Litro", "precoAdicional": 24 }
+              ]
+            },
+            {
+              "id": 14,
+              "nome": "Adicionais (todos pagos)",
+              "minimo": 0,
+              "maximo": 30,
+              "gratisAte": 0,
+              "itens": [
+                { "id": 162, "nome": "Coco Ralado", "precoAdicional": 1 },
+                { "id": 163, "nome": "Granulado", "precoAdicional": 1 },
+                { "id": 164, "nome": "Sucrilhos", "precoAdicional": 1 },
+                { "id": 165, "nome": "Granola", "precoAdicional": 1 },
+                { "id": 166, "nome": "Banana", "precoAdicional": 1 },
+                { "id": 167, "nome": "Paçoca", "precoAdicional": 1 },
+                { "id": 168, "nome": "Caldas", "precoAdicional": 1 },
+                { "id": 169, "nome": "Leite Condensado", "precoAdicional": 1.5 },
+                { "id": 170, "nome": "Leite em Pó", "precoAdicional": 1.5 },
+                { "id": 171, "nome": "Confete", "precoAdicional": 3.5 },
+                { "id": 172, "nome": "Chocoball", "precoAdicional": 3.5 },
+                { "id": 173, "nome": "Ovomaltine", "precoAdicional": 3.5 },
+                { "id": 174, "nome": "Morango Fresco", "precoAdicional": 3.5 },
+                { "id": 175, "nome": "Kit Kat", "precoAdicional": 3.5 },
+                { "id": 176, "nome": "Sonho de Valsa", "precoAdicional": 3.5 },
+                { "id": 177, "nome": "Ouro Branco", "precoAdicional": 3.5 },
+                { "id": 178, "nome": "Creme de Ninho", "precoAdicional": 4.5 },
+                { "id": 179, "nome": "Creme de Morango", "precoAdicional": 4.5 },
+                { "id": 180, "nome": "Creme de Ovomaltine", "precoAdicional": 4.5 },
+                { "id": 181, "nome": "Creme de Amendoim", "precoAdicional": 4.5 },
+                { "id": 182, "nome": "Creme de Avelã (Nutella)", "precoAdicional": 4.5 }
+              ]
+            }
+          ]
+        },
+        {
+          "id": 28,
+          "nome": "Açaí Napolitano",
+          "descricao": "Açaí cremoso, creme de leite Ninho, creme de avelã e creme de morango.",
+          "preco": 19,
+          "imagemUrl": null,
+          "disponivel": true,
+          "gruposOpcoes": [
+            {
+              "id": 15,
+              "nome": "Escolha o tamanho",
+              "minimo": 1,
+              "maximo": 1,
+              "gratisAte": 0,
+              "itens": [
+                { "id": 183, "nome": "300 ml", "precoAdicional": 0 },
+                { "id": 184, "nome": "400 ml", "precoAdicional": 2 },
+                { "id": 185, "nome": "500 ml", "precoAdicional": 4 },
+                { "id": 186, "nome": "700 ml", "precoAdicional": 7 },
+                { "id": 187, "nome": "Balde 1 Litro", "precoAdicional": 24 }
+              ]
+            },
+            {
+              "id": 16,
+              "nome": "Adicionais (todos pagos)",
+              "minimo": 0,
+              "maximo": 30,
+              "gratisAte": 0,
+              "itens": [
+                { "id": 188, "nome": "Coco Ralado", "precoAdicional": 1 },
+                { "id": 189, "nome": "Granulado", "precoAdicional": 1 },
+                { "id": 190, "nome": "Sucrilhos", "precoAdicional": 1 },
+                { "id": 191, "nome": "Granola", "precoAdicional": 1 },
+                { "id": 192, "nome": "Banana", "precoAdicional": 1 },
+                { "id": 193, "nome": "Paçoca", "precoAdicional": 1 },
+                { "id": 194, "nome": "Caldas", "precoAdicional": 1 },
+                { "id": 195, "nome": "Leite Condensado", "precoAdicional": 1.5 },
+                { "id": 196, "nome": "Leite em Pó", "precoAdicional": 1.5 },
+                { "id": 197, "nome": "Confete", "precoAdicional": 3.5 },
+                { "id": 198, "nome": "Chocoball", "precoAdicional": 3.5 },
+                { "id": 199, "nome": "Ovomaltine", "precoAdicional": 3.5 },
+                { "id": 200, "nome": "Morango Fresco", "precoAdicional": 3.5 },
+                { "id": 201, "nome": "Kit Kat", "precoAdicional": 3.5 },
+                { "id": 202, "nome": "Sonho de Valsa", "precoAdicional": 3.5 },
+                { "id": 203, "nome": "Ouro Branco", "precoAdicional": 3.5 },
+                { "id": 204, "nome": "Creme de Ninho", "precoAdicional": 4.5 },
+                { "id": 205, "nome": "Creme de Morango", "precoAdicional": 4.5 },
+                { "id": 206, "nome": "Creme de Ovomaltine", "precoAdicional": 4.5 },
+                { "id": 207, "nome": "Creme de Amendoim", "precoAdicional": 4.5 },
+                { "id": 208, "nome": "Creme de Avelã (Nutella)", "precoAdicional": 4.5 }
+              ]
+            }
+          ]
+        },
+        {
+          "id": 29,
+          "nome": "Açaí Ovomaltine",
+          "descricao": "Açaí cremoso, creme de Ovomaltine crocante, leite condensado e flocos de Ovomaltine.",
+          "preco": 19,
+          "imagemUrl": null,
+          "disponivel": true,
+          "gruposOpcoes": [
+            {
+              "id": 17,
+              "nome": "Escolha o tamanho",
+              "minimo": 1,
+              "maximo": 1,
+              "gratisAte": 0,
+              "itens": [
+                { "id": 209, "nome": "300 ml", "precoAdicional": 0 },
+                { "id": 210, "nome": "400 ml", "precoAdicional": 2 },
+                { "id": 211, "nome": "500 ml", "precoAdicional": 4 },
+                { "id": 212, "nome": "700 ml", "precoAdicional": 7 },
+                { "id": 213, "nome": "Balde 1 Litro", "precoAdicional": 24 }
+              ]
+            },
+            {
+              "id": 18,
+              "nome": "Adicionais (todos pagos)",
+              "minimo": 0,
+              "maximo": 30,
+              "gratisAte": 0,
+              "itens": [
+                { "id": 214, "nome": "Coco Ralado", "precoAdicional": 1 },
+                { "id": 215, "nome": "Granulado", "precoAdicional": 1 },
+                { "id": 216, "nome": "Sucrilhos", "precoAdicional": 1 },
+                { "id": 217, "nome": "Granola", "precoAdicional": 1 },
+                { "id": 218, "nome": "Banana", "precoAdicional": 1 },
+                { "id": 219, "nome": "Paçoca", "precoAdicional": 1 },
+                { "id": 220, "nome": "Caldas", "precoAdicional": 1 },
+                { "id": 221, "nome": "Leite Condensado", "precoAdicional": 1.5 },
+                { "id": 222, "nome": "Leite em Pó", "precoAdicional": 1.5 },
+                { "id": 223, "nome": "Confete", "precoAdicional": 3.5 },
+                { "id": 224, "nome": "Chocoball", "precoAdicional": 3.5 },
+                { "id": 225, "nome": "Ovomaltine", "precoAdicional": 3.5 },
+                { "id": 226, "nome": "Morango Fresco", "precoAdicional": 3.5 },
+                { "id": 227, "nome": "Kit Kat", "precoAdicional": 3.5 },
+                { "id": 228, "nome": "Sonho de Valsa", "precoAdicional": 3.5 },
+                { "id": 229, "nome": "Ouro Branco", "precoAdicional": 3.5 },
+                { "id": 230, "nome": "Creme de Ninho", "precoAdicional": 4.5 },
+                { "id": 231, "nome": "Creme de Morango", "precoAdicional": 4.5 },
+                { "id": 232, "nome": "Creme de Ovomaltine", "precoAdicional": 4.5 },
+                { "id": 233, "nome": "Creme de Amendoim", "precoAdicional": 4.5 },
+                { "id": 234, "nome": "Creme de Avelã (Nutella)", "precoAdicional": 4.5 }
+              ]
+            }
+          ]
+        },
+        {
+          "id": 30,
+          "nome": "Açaí Ouro Branco",
+          "descricao": "Açaí cremoso, leite condensado, creme de Ouro Branco, flocos de arroz e bombom Ouro Branco.",
+          "preco": 19,
+          "imagemUrl": null,
+          "disponivel": true,
+          "gruposOpcoes": [
+            {
+              "id": 19,
+              "nome": "Escolha o tamanho",
+              "minimo": 1,
+              "maximo": 1,
+              "gratisAte": 0,
+              "itens": [
+                { "id": 235, "nome": "300 ml", "precoAdicional": 0 },
+                { "id": 236, "nome": "400 ml", "precoAdicional": 2 },
+                { "id": 237, "nome": "500 ml", "precoAdicional": 4 },
+                { "id": 238, "nome": "700 ml", "precoAdicional": 7 },
+                { "id": 239, "nome": "Balde 1 Litro", "precoAdicional": 24 }
+              ]
+            },
+            {
+              "id": 20,
+              "nome": "Adicionais (todos pagos)",
+              "minimo": 0,
+              "maximo": 30,
+              "gratisAte": 0,
+              "itens": [
+                { "id": 240, "nome": "Coco Ralado", "precoAdicional": 1 },
+                { "id": 241, "nome": "Granulado", "precoAdicional": 1 },
+                { "id": 242, "nome": "Sucrilhos", "precoAdicional": 1 },
+                { "id": 243, "nome": "Granola", "precoAdicional": 1 },
+                { "id": 244, "nome": "Banana", "precoAdicional": 1 },
+                { "id": 245, "nome": "Paçoca", "precoAdicional": 1 },
+                { "id": 246, "nome": "Caldas", "precoAdicional": 1 },
+                { "id": 247, "nome": "Leite Condensado", "precoAdicional": 1.5 },
+                { "id": 248, "nome": "Leite em Pó", "precoAdicional": 1.5 },
+                { "id": 249, "nome": "Confete", "precoAdicional": 3.5 },
+                { "id": 250, "nome": "Chocoball", "precoAdicional": 3.5 },
+                { "id": 251, "nome": "Ovomaltine", "precoAdicional": 3.5 },
+                { "id": 252, "nome": "Morango Fresco", "precoAdicional": 3.5 },
+                { "id": 253, "nome": "Kit Kat", "precoAdicional": 3.5 },
+                { "id": 254, "nome": "Sonho de Valsa", "precoAdicional": 3.5 },
+                { "id": 255, "nome": "Ouro Branco", "precoAdicional": 3.5 },
+                { "id": 256, "nome": "Creme de Ninho", "precoAdicional": 4.5 },
+                { "id": 257, "nome": "Creme de Morango", "precoAdicional": 4.5 },
+                { "id": 258, "nome": "Creme de Ovomaltine", "precoAdicional": 4.5 },
+                { "id": 259, "nome": "Creme de Amendoim", "precoAdicional": 4.5 },
+                { "id": 260, "nome": "Creme de Avelã (Nutella)", "precoAdicional": 4.5 }
+              ]
+            }
+          ]
+        },
+        {
+          "id": 31,
+          "nome": "Açaí Sonho de Valsa",
+          "descricao": "Açaí cremoso, leite condensado, creme de Sonho de Valsa, amendoim torrado e bombom Sonho de Valsa.",
+          "preco": 19,
+          "imagemUrl": null,
+          "disponivel": true,
+          "gruposOpcoes": [
+            {
+              "id": 21,
+              "nome": "Escolha o tamanho",
+              "minimo": 1,
+              "maximo": 1,
+              "gratisAte": 0,
+              "itens": [
+                { "id": 261, "nome": "300 ml", "precoAdicional": 0 },
+                { "id": 262, "nome": "400 ml", "precoAdicional": 2 },
+                { "id": 263, "nome": "500 ml", "precoAdicional": 4 },
+                { "id": 264, "nome": "700 ml", "precoAdicional": 7 },
+                { "id": 265, "nome": "Balde 1 Litro", "precoAdicional": 24 }
+              ]
+            },
+            {
+              "id": 22,
+              "nome": "Adicionais (todos pagos)",
+              "minimo": 0,
+              "maximo": 30,
+              "gratisAte": 0,
+              "itens": [
+                { "id": 266, "nome": "Coco Ralado", "precoAdicional": 1 },
+                { "id": 267, "nome": "Granulado", "precoAdicional": 1 },
+                { "id": 268, "nome": "Sucrilhos", "precoAdicional": 1 },
+                { "id": 269, "nome": "Granola", "precoAdicional": 1 },
+                { "id": 270, "nome": "Banana", "precoAdicional": 1 },
+                { "id": 271, "nome": "Paçoca", "precoAdicional": 1 },
+                { "id": 272, "nome": "Caldas", "precoAdicional": 1 },
+                { "id": 273, "nome": "Leite Condensado", "precoAdicional": 1.5 },
+                { "id": 274, "nome": "Leite em Pó", "precoAdicional": 1.5 },
+                { "id": 275, "nome": "Confete", "precoAdicional": 3.5 },
+                { "id": 276, "nome": "Chocoball", "precoAdicional": 3.5 },
+                { "id": 277, "nome": "Ovomaltine", "precoAdicional": 3.5 },
+                { "id": 278, "nome": "Morango Fresco", "precoAdicional": 3.5 },
+                { "id": 279, "nome": "Kit Kat", "precoAdicional": 3.5 },
+                { "id": 280, "nome": "Sonho de Valsa", "precoAdicional": 3.5 },
+                { "id": 281, "nome": "Ouro Branco", "precoAdicional": 3.5 },
+                { "id": 282, "nome": "Creme de Ninho", "precoAdicional": 4.5 },
+                { "id": 283, "nome": "Creme de Morango", "precoAdicional": 4.5 },
+                { "id": 284, "nome": "Creme de Ovomaltine", "precoAdicional": 4.5 },
+                { "id": 285, "nome": "Creme de Amendoim", "precoAdicional": 4.5 },
+                { "id": 286, "nome": "Creme de Avelã (Nutella)", "precoAdicional": 4.5 }
+              ]
+            }
+          ]
+        },
+        {
+          "id": 32,
+          "nome": "Açaí Trufado de Kit Kat",
+          "descricao": "Açaí cremoso, leite condensado, creme de Kit Kat, raspas de chocolate e Kit Kat.",
+          "preco": 19,
+          "imagemUrl": null,
+          "disponivel": true,
+          "gruposOpcoes": [
+            {
+              "id": 23,
+              "nome": "Escolha o tamanho",
+              "minimo": 1,
+              "maximo": 1,
+              "gratisAte": 0,
+              "itens": [
+                { "id": 287, "nome": "300 ml", "precoAdicional": 0 },
+                { "id": 288, "nome": "400 ml", "precoAdicional": 2 },
+                { "id": 289, "nome": "500 ml", "precoAdicional": 4 },
+                { "id": 290, "nome": "700 ml", "precoAdicional": 7 },
+                { "id": 291, "nome": "Balde 1 Litro", "precoAdicional": 24 }
+              ]
+            },
+            {
+              "id": 24,
+              "nome": "Adicionais (todos pagos)",
+              "minimo": 0,
+              "maximo": 30,
+              "gratisAte": 0,
+              "itens": [
+                { "id": 292, "nome": "Coco Ralado", "precoAdicional": 1 },
+                { "id": 293, "nome": "Granulado", "precoAdicional": 1 },
+                { "id": 294, "nome": "Sucrilhos", "precoAdicional": 1 },
+                { "id": 295, "nome": "Granola", "precoAdicional": 1 },
+                { "id": 296, "nome": "Banana", "precoAdicional": 1 },
+                { "id": 297, "nome": "Paçoca", "precoAdicional": 1 },
+                { "id": 298, "nome": "Caldas", "precoAdicional": 1 },
+                { "id": 299, "nome": "Leite Condensado", "precoAdicional": 1.5 },
+                { "id": 300, "nome": "Leite em Pó", "precoAdicional": 1.5 },
+                { "id": 301, "nome": "Confete", "precoAdicional": 3.5 },
+                { "id": 302, "nome": "Chocoball", "precoAdicional": 3.5 },
+                { "id": 303, "nome": "Ovomaltine", "precoAdicional": 3.5 },
+                { "id": 304, "nome": "Morango Fresco", "precoAdicional": 3.5 },
+                { "id": 305, "nome": "Kit Kat", "precoAdicional": 3.5 },
+                { "id": 306, "nome": "Sonho de Valsa", "precoAdicional": 3.5 },
+                { "id": 307, "nome": "Ouro Branco", "precoAdicional": 3.5 },
+                { "id": 308, "nome": "Creme de Ninho", "precoAdicional": 4.5 },
+                { "id": 309, "nome": "Creme de Morango", "precoAdicional": 4.5 },
+                { "id": 310, "nome": "Creme de Ovomaltine", "precoAdicional": 4.5 },
+                { "id": 311, "nome": "Creme de Amendoim", "precoAdicional": 4.5 },
+                { "id": 312, "nome": "Creme de Avelã (Nutella)", "precoAdicional": 4.5 }
+              ]
+            }
+          ]
+        },
+        {
+          "id": 33,
+          "nome": "Açaí Trufado de Pistache",
+          "descricao": "Açaí cremoso, creme de pistache nobre, creme de chocolate branco e raspas de chocolate branco.",
+          "preco": 20,
+          "imagemUrl": null,
+          "disponivel": true,
+          "gruposOpcoes": [
+            {
+              "id": 25,
+              "nome": "Escolha o tamanho",
+              "minimo": 1,
+              "maximo": 1,
+              "gratisAte": 0,
+              "itens": [
+                { "id": 313, "nome": "300 ml", "precoAdicional": 0 },
+                { "id": 314, "nome": "400 ml", "precoAdicional": 2 },
+                { "id": 315, "nome": "500 ml", "precoAdicional": 4 },
+                { "id": 316, "nome": "700 ml", "precoAdicional": 7 },
+                { "id": 317, "nome": "Balde 1 Litro", "precoAdicional": 24 }
+              ]
+            },
+            {
+              "id": 26,
+              "nome": "Adicionais (todos pagos)",
+              "minimo": 0,
+              "maximo": 30,
+              "gratisAte": 0,
+              "itens": [
+                { "id": 318, "nome": "Coco Ralado", "precoAdicional": 1 },
+                { "id": 319, "nome": "Granulado", "precoAdicional": 1 },
+                { "id": 320, "nome": "Sucrilhos", "precoAdicional": 1 },
+                { "id": 321, "nome": "Granola", "precoAdicional": 1 },
+                { "id": 322, "nome": "Banana", "precoAdicional": 1 },
+                { "id": 323, "nome": "Paçoca", "precoAdicional": 1 },
+                { "id": 324, "nome": "Caldas", "precoAdicional": 1 },
+                { "id": 325, "nome": "Leite Condensado", "precoAdicional": 1.5 },
+                { "id": 326, "nome": "Leite em Pó", "precoAdicional": 1.5 },
+                { "id": 327, "nome": "Confete", "precoAdicional": 3.5 },
+                { "id": 328, "nome": "Chocoball", "precoAdicional": 3.5 },
+                { "id": 329, "nome": "Ovomaltine", "precoAdicional": 3.5 },
+                { "id": 330, "nome": "Morango Fresco", "precoAdicional": 3.5 },
+                { "id": 331, "nome": "Kit Kat", "precoAdicional": 3.5 },
+                { "id": 332, "nome": "Sonho de Valsa", "precoAdicional": 3.5 },
+                { "id": 333, "nome": "Ouro Branco", "precoAdicional": 3.5 },
+                { "id": 334, "nome": "Creme de Ninho", "precoAdicional": 4.5 },
+                { "id": 335, "nome": "Creme de Morango", "precoAdicional": 4.5 },
+                { "id": 336, "nome": "Creme de Ovomaltine", "precoAdicional": 4.5 },
+                { "id": 337, "nome": "Creme de Amendoim", "precoAdicional": 4.5 },
+                { "id": 338, "nome": "Creme de Avelã (Nutella)", "precoAdicional": 4.5 }
+              ]
+            }
+          ]
+        },
+        {
+          "id": 34,
+          "nome": "Açaí Trufado de Kinder Bueno",
+          "descricao": "Açaí cremoso, leite condensado, flocos de arroz, creme de Kinder Bueno e Kinder Bueno crocante.",
+          "preco": 21,
+          "imagemUrl": null,
+          "disponivel": true,
+          "gruposOpcoes": [
+            {
+              "id": 27,
+              "nome": "Escolha o tamanho",
+              "minimo": 1,
+              "maximo": 1,
+              "gratisAte": 0,
+              "itens": [
+                { "id": 339, "nome": "300 ml", "precoAdicional": 0 },
+                { "id": 340, "nome": "400 ml", "precoAdicional": 2 },
+                { "id": 341, "nome": "500 ml", "precoAdicional": 4 },
+                { "id": 342, "nome": "700 ml", "precoAdicional": 7 },
+                { "id": 343, "nome": "Balde 1 Litro", "precoAdicional": 24 }
+              ]
+            },
+            {
+              "id": 28,
+              "nome": "Adicionais (todos pagos)",
+              "minimo": 0,
+              "maximo": 30,
+              "gratisAte": 0,
+              "itens": [
+                { "id": 344, "nome": "Coco Ralado", "precoAdicional": 1 },
+                { "id": 345, "nome": "Granulado", "precoAdicional": 1 },
+                { "id": 346, "nome": "Sucrilhos", "precoAdicional": 1 },
+                { "id": 347, "nome": "Granola", "precoAdicional": 1 },
+                { "id": 348, "nome": "Banana", "precoAdicional": 1 },
+                { "id": 349, "nome": "Paçoca", "precoAdicional": 1 },
+                { "id": 350, "nome": "Caldas", "precoAdicional": 1 },
+                { "id": 351, "nome": "Leite Condensado", "precoAdicional": 1.5 },
+                { "id": 352, "nome": "Leite em Pó", "precoAdicional": 1.5 },
+                { "id": 353, "nome": "Confete", "precoAdicional": 3.5 },
+                { "id": 354, "nome": "Chocoball", "precoAdicional": 3.5 },
+                { "id": 355, "nome": "Ovomaltine", "precoAdicional": 3.5 },
+                { "id": 356, "nome": "Morango Fresco", "precoAdicional": 3.5 },
+                { "id": 357, "nome": "Kit Kat", "precoAdicional": 3.5 },
+                { "id": 358, "nome": "Sonho de Valsa", "precoAdicional": 3.5 },
+                { "id": 359, "nome": "Ouro Branco", "precoAdicional": 3.5 },
+                { "id": 360, "nome": "Creme de Ninho", "precoAdicional": 4.5 },
+                { "id": 361, "nome": "Creme de Morango", "precoAdicional": 4.5 },
+                { "id": 362, "nome": "Creme de Ovomaltine", "precoAdicional": 4.5 },
+                { "id": 363, "nome": "Creme de Amendoim", "precoAdicional": 4.5 },
+                { "id": 364, "nome": "Creme de Avelã (Nutella)", "precoAdicional": 4.5 }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "bairrosEntrega": [
+    { "id": 1, "cidade": "Cachoeira Paulista", "nome": "Centro", "taxa": 5 },
+    { "id": 2, "cidade": "Cachoeira Paulista", "nome": "Alto da Boa Vista", "taxa": 5 },
+    { "id": 3, "cidade": "Cachoeira Paulista", "nome": "Alto da Bela Vista", "taxa": 5 },
+    { "id": 4, "cidade": "Cachoeira Paulista", "nome": "Alto da Igreja", "taxa": 5 },
+    { "id": 5, "cidade": "Cachoeira Paulista", "nome": "Bairro das Palmeiras", "taxa": 5 },
+    { "id": 6, "cidade": "Cachoeira Paulista", "nome": "Chácara do Moinho", "taxa": 5 },
+    { "id": 7, "cidade": "Cachoeira Paulista", "nome": "Canção Nova", "taxa": 5 },
+    { "id": 8, "cidade": "Cachoeira Paulista", "nome": "Embaú", "taxa": 15 },
+    { "id": 9, "cidade": "Cachoeira Paulista", "nome": "Embauzinho", "taxa": 12 },
+    { "id": 10, "cidade": "Cachoeira Paulista", "nome": "Jardim da Fonte", "taxa": 5 },
+    { "id": 11, "cidade": "Cachoeira Paulista", "nome": "Jardim dos Ipês", "taxa": 5 },
+    { "id": 12, "cidade": "Cachoeira Paulista", "nome": "Jardim Europa I e II", "taxa": 5 },
+    { "id": 13, "cidade": "Cachoeira Paulista", "nome": "Jardim Nova Cachoeira", "taxa": 5 },
+    { "id": 14, "cidade": "Cachoeira Paulista", "nome": "Jardim Trabalhista", "taxa": 5 },
+    { "id": 15, "cidade": "Cachoeira Paulista", "nome": "Margem Esquerda", "taxa": 5 },
+    { "id": 16, "cidade": "Cachoeira Paulista", "nome": "Parque Primavera", "taxa": 5 },
+    { "id": 17, "cidade": "Cachoeira Paulista", "nome": "Pitéu", "taxa": 5 },
+    { "id": 18, "cidade": "Cachoeira Paulista", "nome": "São João", "taxa": 5 },
+    { "id": 19, "cidade": "Cachoeira Paulista", "nome": "São José", "taxa": 5 },
+    { "id": 20, "cidade": "Cachoeira Paulista", "nome": "Turma 26", "taxa": 10 },
+    { "id": 21, "cidade": "Cachoeira Paulista", "nome": "Vem Viver", "taxa": 5 },
+    { "id": 22, "cidade": "Cachoeira Paulista", "nome": "Vila Cacarro", "taxa": 5 },
+    { "id": 23, "cidade": "Cachoeira Paulista", "nome": "Vila Carmen", "taxa": 5 },
+    { "id": 24, "cidade": "Cachoeira Paulista", "nome": "Vila Nova Esperança", "taxa": 5 },
+    { "id": 25, "cidade": "Cachoeira Paulista", "nome": "Vale do Sol e Furnas", "taxa": 12 },
+    {
+      "id": 26,
+      "cidade": "Cachoeira Paulista",
+      "nome": "Condomínio Residencial Terra Luz",
+      "taxa": 18
+    },
+    { "id": 27, "cidade": "Cachoeira Paulista", "nome": "Canas", "taxa": 15 },
+    { "id": 28, "cidade": "Cachoeira Paulista", "nome": "INPE", "taxa": 10 }
+  ]
+}
