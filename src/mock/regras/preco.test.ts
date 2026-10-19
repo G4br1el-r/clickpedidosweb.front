@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest"
 import type { Produto, ProdutoOpcaoGrupo } from "@/types/entidades"
-import { calcularItem, validarOpcoes } from "./preco"
+import { calcularItem, temPrecoAPartirDe, validarOpcoes } from "./preco"
 
 function grupo(
   id: number,
@@ -131,5 +131,20 @@ describe("validarOpcoes", () => {
     expect(
       validarOpcoes(produto(15, [tamanho]), [{ grupoId: 10, itemId: 100, quantidade: 0 }]),
     ).toBe("Escolha ao menos 1 opção em 'Escolha o tamanho'.")
+  })
+})
+
+describe("temPrecoAPartirDe (regra do cardápio Razor)", () => {
+  it("grupo obrigatório com item pago mostra 'a partir de'", () => {
+    expect(temPrecoAPartirDe(produto(18, [tamanho]))).toBe(true)
+  })
+
+  it("grupo opcional com item pago não mostra", () => {
+    expect(temPrecoAPartirDe(produto(18, [adicionais]))).toBe(false)
+  })
+
+  it("grupo obrigatório só com itens grátis não mostra", () => {
+    const sabor = grupo(50, "Sabor", { minimo: 1, maximo: 1 }, [[500, "Carne", 0]])
+    expect(temPrecoAPartirDe(produto(9, [sabor]))).toBe(false)
   })
 })

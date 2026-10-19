@@ -59,3 +59,10 @@ export function calcularItem(
 
 /** Evita lixo de ponto flutuante (0,1 + 0,2) em valores de dinheiro. */
 export const arredondar = (valor: number) => Math.round(valor * 100) / 100
+
+/** Porta da regra do Views/Home/Index.cshtml: grupo obrigatório com opção paga → "A partir de". */
+export function temPrecoAPartirDe(produto: Produto): boolean {
+  return produto.gruposOpcoes.some(
+    (g) => g.ativo && g.minimo > 0 && g.itens.some((i) => i.ativo && i.precoAdicional > 0),
+  )
+}
