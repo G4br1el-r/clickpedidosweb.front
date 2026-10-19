@@ -1,4 +1,5 @@
 import type { BancoDados } from "@/mock/banco"
+import { lojaEstaAberta } from "@/mock/regras/loja"
 import type { ConfiguracaoLoja } from "@/types/entidades"
 
 /**
@@ -27,7 +28,7 @@ export type LojaPublica = Pick<
   | "aceitaCartaoNaEntrega"
 >
 
-export function lojaPublica(dados: BancoDados): LojaPublica {
+export function lojaPublica(dados: BancoDados, agora: Date = new Date()): LojaPublica {
   const l = dados.loja
   return {
     nomeLoja: l.nomeLoja,
@@ -36,7 +37,7 @@ export function lojaPublica(dados: BancoDados): LojaPublica {
     whatsApp: l.whatsApp,
     endereco: l.endereco,
     horario: l.horario,
-    lojaAberta: l.lojaAberta,
+    lojaAberta: lojaEstaAberta(l, dados.horarios, agora),
     mensagemFechada: l.mensagemFechada,
     taxaEntrega: l.taxaEntrega,
     pedidoMinimo: l.pedidoMinimo,

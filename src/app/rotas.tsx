@@ -14,6 +14,25 @@ const rotas: RouteObject[] = [
           Component: (await import("@/features/loja/cardapio/PaginaCardapio")).PaginaCardapio,
         }),
       },
+      {
+        path: "cardapio",
+        lazy: async () => ({
+          Component: (await import("@/features/loja/cardapio/PaginaCardapio"))
+            .PaginaCardapioDigital,
+        }),
+      },
+      {
+        path: "checkout",
+        lazy: async () => ({
+          Component: (await import("@/features/loja/checkout/PaginaCheckout")).PaginaCheckout,
+        }),
+      },
+      {
+        path: "pedido/:token",
+        lazy: async () => ({
+          Component: (await import("@/features/loja/pedido/PaginaPedido")).PaginaPedido,
+        }),
+      },
     ],
   },
   {
