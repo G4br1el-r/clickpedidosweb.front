@@ -10,10 +10,17 @@ interface ProdutoLinhaProps {
   aoAbrir?: (produto: Produto) => void
   /** Loja fechada: mostra o produto, mas não deixa pedir. */
   bloqueado?: boolean
+  /** Salão (garçom): esgotado ou oculto online continua lançável, só com a marcação. */
+  modoSalao?: boolean
 }
 
-export function ProdutoLinha({ produto, aoAbrir, bloqueado }: ProdutoLinhaProps) {
-  const esgotado = !produto.disponivel
+export function ProdutoLinha({ produto, aoAbrir, bloqueado, modoSalao }: ProdutoLinhaProps) {
+  const esgotado = !produto.disponivel && !modoSalao
+  const marcas = modoSalao
+    ? [!produto.ativo && "Oculto online", !produto.disponivel && "Esgotado online"].filter(
+        (m): m is string => !!m,
+      )
+    : []
   const conteudo = (
     <>
       <div className="flex min-w-0 flex-1 flex-col gap-1">
@@ -31,6 +38,14 @@ export function ProdutoLinha({ produto, aoAbrir, bloqueado }: ProdutoLinhaProps)
           ) : (
             <Preco valor={produto.preco} aPartirDe={temPrecoAPartirDe(produto)} />
           )}
+          {marcas.map((m) => (
+            <span
+              key={m}
+              className="rounded-full bg-aviso px-2 py-0.5 font-semibold text-aviso-foreground text-xs"
+            >
+              {m}
+            </span>
+          ))}
         </div>
       </div>
       <FotoProduto produto={produto} tamanho="md" className={cn(esgotado && "grayscale")} />

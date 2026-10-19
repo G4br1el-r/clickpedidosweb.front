@@ -51,6 +51,12 @@ const rotas: RouteObject[] = [
         }),
       },
       {
+        path: "admin/cozinha",
+        lazy: async () => ({
+          Component: (await import("@/features/admin/cozinha/PaginaCozinha")).PaginaCozinha,
+        }),
+      },
+      {
         path: "admin/pedidos/:id/imprimir",
         lazy: async () => ({
           Component: (await import("@/features/admin/impressao/PaginaCupom")).PaginaCupom,
@@ -67,9 +73,6 @@ const rotas: RouteObject[] = [
 ]
 
 function rotasAdmin(): RouteObject[] {
-  const emConstrucao = async () => ({
-    Component: (await import("@/features/admin/componentes/EmConstrucao")).EmConstrucao,
-  })
   return [
     {
       index: true,
@@ -145,7 +148,24 @@ function rotasAdmin(): RouteObject[] {
           .PaginaConfiguracoes,
       }),
     },
-    ...["mesas", "mesas/:id", "garcom", "cozinha"].map((path) => ({ path, lazy: emConstrucao })),
+    {
+      path: "mesas",
+      lazy: async () => ({
+        Component: (await import("@/features/admin/mesas/PaginaMesas")).PaginaMesas,
+      }),
+    },
+    {
+      path: "mesas/:id",
+      lazy: async () => ({
+        Component: (await import("@/features/admin/mesas/PaginaComanda")).PaginaComanda,
+      }),
+    },
+    {
+      path: "garcom",
+      lazy: async () => ({
+        Component: (await import("@/features/admin/garcom/PaginaGarcom")).PaginaGarcom,
+      }),
+    },
   ]
 }
 
