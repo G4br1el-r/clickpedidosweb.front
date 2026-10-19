@@ -1,4 +1,4 @@
-import { render, screen, within } from "@testing-library/react"
+import { render, screen, waitFor, within } from "@testing-library/react"
 import userEvent from "@testing-library/user-event"
 import { RouterProvider } from "react-router"
 import { beforeEach, describe, expect, it } from "vitest"
@@ -56,7 +56,7 @@ describe("PaginaCardapio", () => {
       within(sacola).getByRole("button", { name: "Aumentar quantidade de Pastel de Carne" }),
     )
     await userEvent.click(within(sacola).getByRole("button", { name: "Continuar" }))
-    expect(roteador.state.location.pathname).toBe("/checkout")
+    await waitFor(() => expect(roteador.state.location.pathname).toBe("/checkout"))
   })
 
   it("loja fechada mostra o aviso e não deixa abrir produto", async () => {
