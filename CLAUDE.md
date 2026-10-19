@@ -38,6 +38,8 @@ Novo front do ClickPedido (Quiosque do Mineiro): a mesma loja, admin, salão e c
 - Segredos só em variáveis de ambiente; `.env.example` lista os nomes.
 
 ## Como trabalhar
+- **Não parar para perguntar durante a implementação:** aplique uma decisão padrão sensata e registre a dúvida em `docs/perguntas-pendentes.md` (pergunta + decisão aplicada). Quando o usuário disser "cadê a pergunta", apresente todas as pendentes.
+- Rode a suíte completa (`pnpm test`, `pnpm test:e2e`, `pnpm lint`, `pnpm typecheck`, `pnpm build`) ao fim de cada fase, antes do commit e push.
 - Antes de implementar algo com vários passos, planeje (skill `core:writing-plans`).
 - Implemente com TDD (seção abaixo) e feche com "finaliza" (`/core:finish`).
 - Uma fase do `docs/plano-v1.md` por vez; cada fase só começa quando o usuário mandar.
