@@ -15,3 +15,7 @@ pnpm dev
 ```
 
 Abra `http://localhost:5173`.
+
+- Admin (mock): `http://localhost:5173/admin`, login `admin` e senha `clickpedido` (só para teste; não é a senha do sistema real).
+- Guia vivo do design: `http://localhost:5173/_design`.
+- Os dados ficam no navegador (`localStorage`). Para voltar ao estado inicial, use "Resetar dados de teste" no admin.

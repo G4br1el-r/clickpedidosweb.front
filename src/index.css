@@ -269,3 +269,13 @@
     --duracao-enfase: 0ms;
   }
 }
+
+@layer utilities {
+  /* Listas horizontais roláveis no toque (abas de categoria) sem a barra aparecendo. */
+  .sem-barra {
+    scrollbar-width: none;
+  }
+  .sem-barra::-webkit-scrollbar {
+    display: none;
+  }
+}

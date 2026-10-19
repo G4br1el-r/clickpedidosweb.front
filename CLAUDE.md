@@ -71,3 +71,6 @@ Este projeto segue TDD. Vale para todo código novo e todo bugfix, sem exceção
 - **Fora do TDD:** só ajuste puramente visual (cor, espaçamento, tipografia) e as direções de estudo da página `/_design`.
 
 Comandos: `pnpm test` · `pnpm test:watch` · `pnpm test:coverage` · `pnpm test:e2e`
+
+## Componentes base
+Antes de criar qualquer componente de UI, leia `docs/components/README.md`. Se um componente registrado resolve o caso, use-o; se resolve em parte, estenda com prop opcional (padrão que preserva o comportamento atual) em vez de criar outro. Ao criar um componente reutilizável, registre com "registra componente".
