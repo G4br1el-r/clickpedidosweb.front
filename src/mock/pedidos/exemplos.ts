@@ -1,3 +1,4 @@
+import { minutosDesdeMeiaNoite } from "@/lib/datas"
 import { arredondar, calcularItem, type OpcaoSelecionada } from "@/mock/regras/preco"
 import type {
   FormaPagamento,
@@ -177,10 +178,14 @@ const roteiro: PedidoExemplo[] = [
 export function pedidosDeExemplo(produtos: Produto[], agora: Date = new Date()): Pedido[] {
   const porId = new Map(produtos.map((p) => [p.id, p]))
   let proximoItem = 1
+  // Logo depois da meia-noite, comprime o roteiro para todos os pedidos ficarem em "hoje".
+  const maisAntigo = Math.max(...roteiro.map((r) => r.minutosAtras))
+  const disponivel = Math.max(0, minutosDesdeMeiaNoite(agora) - 0.5)
+  const escala = disponivel < maisAntigo ? disponivel / maisAntigo : 1
 
   return roteiro.map((ex, indice) => {
     const id = indice + 1
-    const criadoEm = new Date(agora.getTime() - ex.minutosAtras * 60_000).toISOString()
+    const criadoEm = new Date(agora.getTime() - ex.minutosAtras * escala * 60_000).toISOString()
     const itens: PedidoItem[] = ex.itens.flatMap((it) => {
       const produto = porId.get(it.produtoId)
       if (!produto) return []

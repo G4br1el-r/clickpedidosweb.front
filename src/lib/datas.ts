@@ -47,3 +47,15 @@ export function diaLocal(iso: string | Date): string {
   }).format(typeof iso === "string" ? new Date(iso) : iso)
   return partes
 }
+
+/** Minutos desde a meia-noite em Brasília (para limitar dados de exemplo ao dia de hoje). */
+export function minutosDesdeMeiaNoite(agora: Date = new Date()): number {
+  const partes = new Intl.DateTimeFormat("en-US", {
+    timeZone: FUSO,
+    hour: "2-digit",
+    minute: "2-digit",
+    hourCycle: "h23",
+  }).formatToParts(agora)
+  const valor = (tipo: string) => Number(partes.find((p) => p.type === tipo)?.value ?? 0)
+  return valor("hour") * 60 + valor("minute")
+}

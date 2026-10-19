@@ -29,3 +29,11 @@ describe("formatarHora", () => {
     expect(formatarHora("2026-10-18T20:05:00Z")).toBe("17:05")
   })
 })
+
+describe("minutosDesdeMeiaNoite", () => {
+  it("conta a partir da meia-noite de Brasília", async () => {
+    const { minutosDesdeMeiaNoite } = await import("./datas")
+    expect(minutosDesdeMeiaNoite(new Date("2026-10-19T03:10:00Z"))).toBe(10)
+    expect(minutosDesdeMeiaNoite(new Date("2026-10-18T19:00:00Z"))).toBe(16 * 60)
+  })
+})

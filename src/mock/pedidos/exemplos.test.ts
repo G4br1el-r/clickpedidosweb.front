@@ -46,3 +46,15 @@ describe("pedidosDeExemplo", () => {
     }
   })
 })
+
+describe("pedidosDeExemplo logo depois da meia-noite", () => {
+  it("todos os pedidos ficam no mesmo dia local, mantendo a ordem", async () => {
+    const { diaLocal } = await import("@/lib/datas")
+    const madrugada = new Date("2026-10-19T03:10:00Z") // 00:10 em Brasília
+    const pedidos = pedidosDeExemplo(produtosIniciais, madrugada)
+    expect(new Set(pedidos.map((p) => diaLocal(p.criadoEm)))).toEqual(new Set(["2026-10-19"]))
+    const porId = (id: number) => pedidos.find((p) => p.id === id)?.criadoEm ?? ""
+    expect(porId(10) < porId(8)).toBe(true)
+    expect(porId(8) < porId(1)).toBe(true)
+  })
+})

@@ -48,7 +48,7 @@ export const COLUNAS_FILA = [
   {
     id: "novos",
     titulo: "Novos",
-    status: ["AguardandoPagamento", "Recebido"],
+    status: ["Recebido"],
     cor: "bg-marca",
     vazio: "Nenhum pedido novo.",
   },
